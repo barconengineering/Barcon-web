@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  distDir: process.env.BARENG_STATIC_EXPORT === "true" ? ".next-export" : ".next-build",
+  // Vercel expects the standard .next output folder.
+  distDir: process.env.BARENG_STATIC_EXPORT === "true" ? ".next-export" : process.env.VERCEL ? ".next" : ".next-build",
   output: process.env.BARENG_STATIC_EXPORT === "true" ? "export" : undefined,
   images: { unoptimized: process.env.BARENG_STATIC_EXPORT === "true" },
   // Static company pages do not need partial prerendering.
