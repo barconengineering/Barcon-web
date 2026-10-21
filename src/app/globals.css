@@ -54,8 +54,8 @@ a:hover .project-card-link svg,.directory-service:hover>svg:last-child,.service-
 .site-header { background: var(--navy); color: var(--porcelain); position: sticky; top: 0; z-index: 20; border-bottom: 1px solid rgb(255 255 255 / .12); }
 .header-inner { height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
 .brand { display: inline-flex; align-items: center; gap: 11px; flex-shrink: 0; color: var(--porcelain); }
-.brand-mark { width: 43px; height: 51px; position: relative; overflow: hidden; mix-blend-mode: screen; flex: 0 0 43px; }
-.brand-mark>img { position: absolute; width: 369.6px; height: 85.14px; max-width: none; left: -168px; top: -7px; }
+.brand-mark { width: 43px; height: 50px; flex: 0 0 43px; }
+.brand-mark>img { width: 100%; height: 100%; object-fit: contain; }
 .brand-type { font: 900 28px/1 var(--font-satoshi), sans-serif; letter-spacing: -.035em; }
 .brand-type>span { display: block; font-size: 8px; font-weight: 500; letter-spacing: .38em; margin-top: 8px; padding-left: 2px; }
 .main-nav { display: flex; align-items: center; gap: 32px; }
