@@ -1,34 +1,17 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
-import { photos } from "@/lib/photos";
+import Image from "next/image";
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
+import { useVideoPlayback } from "@/hooks/use-video-playback";
+
 export function HeroVideo() {
-  const video = useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = useState(false);
-  useEffect(() => {
-    const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const sync = () => {
-      if (preference.matches) video.current?.pause();
-      else void video.current?.play().catch(() => {});
-    };
-    // Lazy-load: only start fetching the video once the rest of the page has loaded.
-    const start = () => {
-      sync();
-      preference.addEventListener('change', sync);
-    };
-    if (document.readyState === 'complete') start();
-    else window.addEventListener('load', start, { once: true });
-    return () => {
-      window.removeEventListener('load', start);
-      preference.removeEventListener('change', sync);
-    };
-  }, []);
+  const reducedMotion = useReducedMotion();
+  const { video, playing, toggle, onPlay, onPause } = useVideoPlayback();
+  if (reducedMotion) return <Image src="/hero-poster.jpg" alt="" fill priority sizes="100vw" className="hero-video" aria-hidden="true" />;
   return <>
-    <video ref={video} className="hero-video" muted loop playsInline preload="none" poster={photos.solarArray.src} aria-hidden="true" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)}>
-      <source src="/videos/DJI_0580.MP4" type="video/mp4" />
+    <video ref={video} className="hero-video" autoPlay muted loop playsInline preload="metadata" poster="/hero-poster.jpg" aria-hidden="true" onPlay={onPlay} onPause={onPause}>
+      <source src="/hero.webm" type="video/webm" />
+      <source src="/hero.mp4" type="video/mp4" />
     </video>
-    <button className="hero-video-toggle" type="button" onClick={() => {
-      if (video.current?.paused) void video.current.play().catch(() => {});
-      else video.current?.pause();
-    }}>{playing ? 'Pause video' : 'Play video'}</button>
+    <button className="hero-video-toggle" type="button" onClick={toggle}>{playing ? "Pause video" : "Play video"}</button>
   </>;
 }
