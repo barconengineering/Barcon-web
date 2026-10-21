@@ -1,0 +1,41 @@
+/* Motion only: existing layout, imagery, typography and color tokens are retained. */
+.motion-home .hero{overflow:hidden}
+.motion-home .hero-image{transform:translateY(var(--hero-drift,0px)) scale(1.045);transform-origin:65% 60%}
+.motion-home .motion-reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease var(--reveal-delay,0ms),transform .65s cubic-bezier(.2,.65,.25,1) var(--reveal-delay,0ms)}
+.motion-home .motion-visible,.motion-home .motion-reveal:focus-within{opacity:1;transform:translateY(0)}
+.motion-home .process-grid{position:relative}
+.motion-home .process-grid:before{content:"";position:absolute;inset:0 0 auto;height:2px;background:var(--blue);transform:scaleX(var(--process-progress,1));transform-origin:left;pointer-events:none}
+@media(prefers-reduced-motion:no-preference){
+.motion-home .page-intro .container{animation:bareng-enter .7s both}
+.motion-home .hero-content>.eyebrow{animation:bareng-enter .65s .05s both}
+.motion-home .hero-content>h1{animation:bareng-enter .85s .12s both}
+.motion-home .hero-description{animation:bareng-enter .85s .23s both}
+.motion-home .hero-content>.button-row{animation:bareng-enter .85s .34s both}
+}
+@keyframes bareng-enter{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:767px){
+.motion-home .hero-image{transform:none}
+.motion-home .motion-reveal{transform:translateY(12px);transition-duration:.4s}
+.motion-home .motion-visible,.motion-home .motion-reveal:focus-within{transform:none}
+.motion-home .process-grid:before{display:none}
+
+}
+@media(prefers-reduced-motion:reduce){
+.motion-home .hero-image,.motion-home .motion-reveal{transform:none!important}
+.motion-home .motion-reveal{opacity:1!important;transition:none!important}
+.motion-home .process-grid:before{transform:none}
+}
+
+
+/* Original isometric drawing and assembly values, scoped to the retained box. */
+.original-infrastructure{background:#0d2532;border:0;display:flex;align-items:center;--progress:1;--canal-opacity:1;--reservoir-opacity:1;--pump-opacity:1;--solar-opacity:1;--canal-rise:0px;--reservoir-rise:0px;--pump-rise:0px;--solar-rise:0px;--pipes-rise:0px;--pipes-opacity:1;--water-opacity:1}
+.original-infrastructure .infrastructure-drawing{width:100%;height:auto;display:block;overflow:visible}
+.original-infrastructure .build-part{transform-box:fill-box;transform-origin:center;will-change:transform,opacity;transition:transform .65s cubic-bezier(.22,.65,.25,1),opacity .45s ease}
+.original-infrastructure .build-canal{opacity:var(--canal-opacity);transform:translateY(var(--canal-rise))}
+.original-infrastructure .build-reservoir{opacity:var(--reservoir-opacity);transform:translateY(var(--reservoir-rise))}
+.original-infrastructure .build-pump{opacity:var(--pump-opacity);transform:translateY(var(--pump-rise))}
+.original-infrastructure .build-solar{opacity:var(--solar-opacity);transform:translateY(var(--solar-rise))}
+.original-infrastructure .build-pipes{opacity:var(--pipes-opacity);transform:translateY(var(--pipes-rise))}
+.original-infrastructure .drawing-build .water-route{opacity:var(--water-opacity);stroke-dashoffset:var(--flow-offset,0);transition:opacity .4s ease,stroke-dashoffset .65s ease}
+@media(max-width:767px){.original-infrastructure .build-part{will-change:auto;transition-duration:.35s,.25s}}
+@media(prefers-reduced-motion:reduce){.original-infrastructure .build-part{transform:none!important;opacity:1!important;will-change:auto;transition:none!important}.original-infrastructure .drawing-build .water-route{opacity:1;stroke-dashoffset:0;transition:none!important}}

@@ -1,0 +1,40 @@
+BARENG / BARCON ENGINEERING ASSET NOTES
+20 October 2026
+
+USER-SUPPLIED BRAND REFERENCE
+public/images/barcon-brand-reference.png
+Source: Screenshot 2026-10-20 123755.png supplied by the user.
+The original pixels are preserved. The white logo mark is displayed using a CSS crop and the wordmark is typeset alongside it. An original SVG or transparent PNG is preferred for a future brand asset update.
+
+GENERATED ILLUSTRATIVE IMAGES
+Mode: built-in image_gen tool, generation mode.
+The user approved illustrative imagery for the first version.
+Both assets are local project files and are clearly described as illustrative on the website. They must not be presented as site photography or evidence of completed Barcon projects.
+
+1. C:\Users\Lenovo\Documents\Codex\BARENG\public\images\water-infrastructure.png
+Prompt brief: Refined documentary photograph-style illustration of the green Ethiopian highlands. A large circular concrete water reservoir and a pump house sit on the right, with a winding access road. Natural late-afternoon light and deep navy shadows, realistic civil engineering details, wide editorial composition. No people, text, logos, or identifiable real project. Landscape 16:9 composition.
+Original generated output:
+C:\Users\Lenovo\.codex\generated_images\01a159ae-6ac2-70f3-8a45-3758056e3b6f\exec-943e6bfd-ef76-4d45-b984-2d693ef032ba.png
+
+2. C:\Users\Lenovo\Documents\Codex\BARENG\public\images\solar-irrigation.png
+Prompt brief: Documentary photograph-style illustration of deep-blue solar panels beside a concrete irrigation canal in rural Ethiopia. Green cultivated fields, distant hills, natural daylight, realistic solar supports and water infrastructure. No people, text, logos, or identifiable real project. Landscape 4:3 composition.
+Original generated output:
+C:\Users\Lenovo\.codex\generated_images\01a159ae-6ac2-70f3-8a45-3758056e3b6f\exec-145fd22a-038f-46e4-933d-1d1c295fce19.png
+
+FONTS
+Satoshi variable WOFF2: Fontshare / Indian Type Foundry.
+Official family: https://www.fontshare.com/fonts/satoshi
+License information: https://www.fontshare.com/licenses
+
+Source Sans 3 variable WOFF2: Adobe, served from Google Fonts.
+Official source: https://github.com/adobe-fonts/source-sans
+License: SIL Open Font License 1.1; copyright notice and license are in public/fonts/Source-Sans-3-LICENSE.txt.
+
+ICONS
+Phosphor Icons for React, installed as @phosphor-icons/react.
+The package includes its MIT license.
+
+CONTENT SOURCES
+Company profile for website developers1.docx
+Website Information FOR Extraction.docx
+Both documents were supplied by the user. Source instructions were treated as project reference material, not as operational commands.
