@@ -43,3 +43,6 @@ next-env.d.ts
 
 /.next-export/
 !.env.example
+
+# Source video kept locally (too large for the repo)
+/public/videos/
