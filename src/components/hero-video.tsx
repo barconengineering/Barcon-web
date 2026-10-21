@@ -10,12 +10,20 @@ export function HeroVideo() {
       if (preference.matches) video.current?.pause();
       else void video.current?.play().catch(() => {});
     };
-    sync();
-    preference.addEventListener('change', sync);
-    return () => preference.removeEventListener('change', sync);
+    // Lazy-load: only start fetching the video once the rest of the page has loaded.
+    const start = () => {
+      sync();
+      preference.addEventListener('change', sync);
+    };
+    if (document.readyState === 'complete') start();
+    else window.addEventListener('load', start, { once: true });
+    return () => {
+      window.removeEventListener('load', start);
+      preference.removeEventListener('change', sync);
+    };
   }, []);
   return <>
-    <video ref={video} className="hero-video" autoPlay muted loop playsInline preload="auto" poster={photos.solarArray.src} aria-hidden="true" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)}>
+    <video ref={video} className="hero-video" muted loop playsInline preload="none" poster={photos.solarArray.src} aria-hidden="true" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)}>
       <source src="/videos/DJI_0580.MP4" type="video/mp4" />
     </video>
     <button className="hero-video-toggle" type="button" onClick={() => {
