@@ -6,6 +6,7 @@ import "./globals.css";
 import "./motion.css";
 import { HomeMotion } from "@/components/home-motion";
 import { siteOrigin, allowIndexing } from "@/lib/site";
+import { Analytics } from "@vercel/analytics/next";
 
 const satoshi = localFont({
   src: [{ path: "../../public/fonts/satoshi-variable.woff2", weight: "300 900" }],
@@ -23,5 +24,5 @@ export const metadata: Metadata = {
   openGraph: { type: "website", siteName: "Barcon Engineering", locale: "en_ET", title: "Barcon Engineering", description: "Engineering with purpose. Building for communities across Ethiopia." },
 };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" className={`${satoshi.variable} ${sourceSans.variable}`}><body><a href="#main-content" className="skip-link">Skip to content</a><HomeMotion><Header /><main id="main-content">{children}</main><Footer /></HomeMotion></body></html>;
+  return <html lang="en" className={`${satoshi.variable} ${sourceSans.variable}`}><body><a href="#main-content" className="skip-link">Skip to content</a><HomeMotion><Header /><main id="main-content">{children}</main><Footer /></HomeMotion><Analytics /></body></html>;
 }
