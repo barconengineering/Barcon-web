@@ -1,6 +1,6 @@
 export const photos = {
   irrigation: { src: '/images/irrigation.jpeg', alt: 'Truck-mounted crane lowering irrigation pipes into a trench in open farmland', caption: 'Irrigation pipeline installation' },
-  reservoir: { src: '/images/WhatsApp Image 2026-10-21 at 11.02.43.jpeg', alt: 'Circular masonry water reservoir on a wooded hillside', caption: 'Water storage infrastructure' },
+  reservoir: { src: '/images/reservoir.jpeg', alt: 'Circular concrete water reservoir with a blue band on a red-earth site behind a blue fence', caption: 'Water storage infrastructure' },
   grading: { src: '/images/WhatsApp Image 2026-10-21 at 11.02.45.jpeg', alt: 'Motor grader shaping an unpaved road', caption: 'Road grading and earthworks' },
   compaction: { src: '/images/WhatsApp Image 2026-10-21 at 11.02.47.jpeg', alt: 'Road roller compacting a gravel road', caption: 'Gravel compaction' },
   earthRoad: { src: '/images/WhatsApp Image 2026-10-21 at 11.02.49.jpeg', alt: 'Graded red earth road between buildings and trees', caption: 'Road formation' },

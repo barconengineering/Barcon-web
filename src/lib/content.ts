@@ -1,6 +1,6 @@
 export const company = {
   name: "Barcon Engineering",
-  email: "barconengineering2020@gmail.com",
+  email: "info@barconengineering.com",
   phone: "+251 901 223 150",
   phoneHref: "+251901223150",
   address: "Imperial Plaza Building, Office 201",
