@@ -494,7 +494,6 @@ a:hover .project-card-link svg,.directory-service:hover>svg:last-child,.service-
 .hero-video-version .hero-video { z-index: 0; pointer-events: none; }
 .hero-video-version .hero-shade { z-index: 1; pointer-events: none; }
 .hero-video-version .hero-content { position: relative; z-index: 2; }
-.hero-video-version .hero-video-toggle { z-index: 3; }
 
 /* About page — full-bleed community video band */
 .community-hero { min-height: 560px; }

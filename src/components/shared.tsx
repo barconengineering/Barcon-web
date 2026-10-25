@@ -10,8 +10,8 @@ export function TextLink({ href, children }: { href: string; children: React.Rea
 export function PageIntro({ label, title, children }: { label: string; title: string; children: React.ReactNode }) {
   return <section className="page-intro"><div className="container"><p className="eyebrow">{label}</p><h1>{title}</h1><p className="intro-description">{children}</p></div></section>;
 }
-export function Illustration({ name, alt, priority = false, className = "", overlay }: { name: string; alt: string; priority?: boolean; className?: string; overlay?: React.ReactNode }) {
-  return <figure className={`illustration ${className}`}><div className="image-frame"><Image src={name.startsWith("/") ? name : `/images/${name}.png`} fill sizes="(max-width: 767px) 100vw, 55vw" alt={alt} priority={priority} />{overlay}</div></figure>;
+export function Illustration({ name, alt, className = "", overlay }: { name: string; alt: string; className?: string; overlay?: React.ReactNode }) {
+  return <figure className={`illustration ${className}`}><div className="image-frame"><Image src={name.startsWith("/") ? name : `/images/${name}.png`} fill sizes="(max-width: 767px) 100vw, 55vw" alt={alt} loading="lazy" />{overlay}</div></figure>;
 }
 export function ProjectCTA() {
   return <section className="contact-band"><div className="container contact-band-inner"><div><p className="eyebrow">Build with Barcon</p><h2>Let’s move your<br />project forward.</h2></div><div><p>Bring us your requirements. We’ll bring the engineering, experience, and commitment to help deliver them.</p><Link href="/contact" className="button">Discuss a project <Icon name="diagonal" size={20} /></Link></div></div></section>;
