@@ -102,6 +102,7 @@ export type Project = {
   scope: string[];
   metrics: { value: string; label: string }[];
   record?: { delivery: string; contractDate?: string; status?: string; statusTitle?: string; scopeNote: string };
+  gallery?: { src: string; alt: string; caption: string }[];
 };
 
 export const projects: Project[] = [
@@ -121,6 +122,52 @@ export const projects: Project[] = [
       status: "Provisional acceptance recorded on 3 August 2025. This historical milestone does not establish final acceptance or current operational status.",
       scopeNote: "The following describes the documented works of the joint-venture project. Quantities relate to the project as a whole, rather than to Barcon Engineering alone.",
     },
+    gallery: [
+      { src: "/images/hobicha/trench-excavation-2.jpg", alt: "Long pipeline trench cut through red soil across dry grassland towards a eucalyptus grove", caption: "Pipeline trench excavation" },
+      { src: "/images/hobicha/trench-excavation-1.jpg", alt: "View along a deep, narrow pipeline trench with steep red-soil walls", caption: "Trench excavation for the pipeline network" },
+      { src: "/images/hobicha/sandwich-reservoir-construction.jpg", alt: "Circular stone-masonry reservoir under construction on a hillside, with a wooden ladder and workers at its base", caption: "Masonry reservoir under construction" },
+      { src: "/images/hobicha/sandwich-reservoir-50m3.jpg", alt: "Completed circular stone-masonry reservoir with a blue-painted roof edge among eucalyptus trees", caption: "50 m³ booster reservoir" },
+      { src: "/images/hobicha/service-reservoir-300m3-1.jpg", alt: "Large circular concrete reservoir with a blue band and steel access ladder on a gravelled site", caption: "300 m³ storage reservoir" },
+      { src: "/images/hobicha/service-reservoir-300m3-2.jpg", alt: "Concrete reservoir and a small arched shelter inside a blue-post chain-link fence under a cloudy sky", caption: "300 m³ storage reservoir compound" },
+      { src: "/images/hobicha/service-reservoir-300m3-3.jpg", alt: "Fenced reservoir compound with a blue gate and guard house on a red-earth hilltop", caption: "Fenced reservoir site and guard house" },
+      { src: "/images/hobicha/booster-station.jpg", alt: "Two people at the blue gate of a fenced booster station with a pump house and masonry reservoir", caption: "Booster station" },
+      { src: "/images/hobicha/generator-house.jpg", alt: "Block generator house with blue trim inside a blue fence, beside a pole-mounted transformer and street lights", caption: "Generator house and grid connection" },
+      { src: "/images/hobicha/water-point-construction.jpg", alt: "Newly built concrete water point with three taps on a slab, inside a timber and barbed-wire fence", caption: "Public water point under construction" },
+      { src: "/images/hobicha/water-point.jpg", alt: "Completed concrete water point with three taps on a stone-masonry platform beneath trees", caption: "Completed public water point" },
+      { src: "/images/hobicha/water-point-community.jpg", alt: "Women in colourful shawls filling yellow jerrycans at a public water point inside a blue fence", caption: "Community members collecting water" },
+    ],
+  },
+  {
+    slug: "dimeka-town-water",
+    title: "Dimeka Town Water Supply & Sanitation",
+    category: "Water & sanitation",
+    location: "Dimeka, Ethiopia",
+    client: "Ministry of Water and Energy",
+    summary: "Water infrastructure spanning electromechanical equipment, pressure mains, distribution, storage, and operational buildings.",
+    scope: ["Electromechanical works and diesel power source", "Pressure main and distribution network installation", "200 m³ reinforced concrete reservoir", "Public water points and network valve chambers", "Road and river crossings", "Generator house, workshop, office, and associated buildings"],
+    metrics: [{ value: "200 m³", label: "Concrete reservoir" }, { value: "Integrated", label: "Water infrastructure" }],
+    gallery: [
+      { src: "/images/dimeka/service-reservoir-200m3.jpg", alt: "Circular concrete reservoir with a blue band and vertical stripe on a red-earth site under a cloudy sky", caption: "200 m³ service reservoir" },
+      { src: "/images/dimeka/service-reservoir-2.jpg", alt: "Rendered concrete reservoir with a light-blue band on a circular apron, with trees and a worker in the background", caption: "Completed service reservoir" },
+      { src: "/images/dimeka/pipe-shade.jpg", alt: "Long steel-framed pipe storage shed with a corrugated roof sheltering coils of black HDPE pipe", caption: "Pipe storage shed" },
+      { src: "/images/dimeka/water-point-1.jpg", alt: "Concrete public water point on a slab with a galvanised steel door and fence posts being installed", caption: "Public water point and fencing" },
+      { src: "/images/dimeka/water-point-2.jpg", alt: "Concrete public water point on a raised slab inside a new galvanised post and barbed-wire fence", caption: "Completed public water point" },
+    ],
+  },
+  {
+    slug: "talato-solar-irrigation",
+    title: "Talato Solar-Powered Irrigation",
+    category: "Solar & irrigation",
+    location: "Konso Zone, Ethiopia",
+    client: "South Ethiopia Regional State Bureau of Agriculture",
+    summary: "A solar-powered small-scale irrigation project combining energy systems, pressure mains, and canal works.",
+    scope: ["Solar system supply and installation", "Pump house and retaining wall construction", "Silt excluder construction", "Pressure main supply and installation", "Main and secondary canal works", "Social service structures"],
+    metrics: [{ value: "Solar", label: "Powered irrigation" }, { value: "Konso", label: "Project zone" }],
+    gallery: [
+      { src: "/images/talato/canal-excavation.jpg", alt: "Freshly excavated irrigation canal trench with spoil heaped alongside, crossing dry hillside farmland", caption: "Canal excavation" },
+      { src: "/images/talato/canal-masonry-construction.jpg", alt: "Stone-masonry irrigation canal winding across terraced farmland and trees, with stockpiled stone along its route", caption: "Canal masonry construction in progress" },
+      { src: "/images/talato/canal-masonry-work.jpg", alt: "View along a stone-masonry canal with a concrete bed under construction, a worker and truck beside it and hills behind", caption: "Masonry canal walls and bed" },
+    ],
   },
   {
     slug: "kelle-water-sanitation",
@@ -202,34 +249,36 @@ export const projects: Project[] = [
     scope: ["Gravel road spot repairs", "Road blading", "Gabion structure construction", "Reinforced concrete pipe production and installation"],
     metrics: [{ value: "Gravel", label: "Road rehabilitation" }, { value: "Drainage", label: "Supporting structures" }],
   },
-  {
-    slug: "talato-solar-irrigation",
-    title: "Talato Solar-Powered Irrigation",
-    category: "Solar & irrigation",
-    location: "Konso Zone, Ethiopia",
-    client: "South Ethiopia Regional State Bureau of Agriculture",
-    summary: "A solar-powered small-scale irrigation project combining energy systems, pressure mains, and canal works.",
-    scope: ["Solar system supply and installation", "Pump house and retaining wall construction", "Silt excluder construction", "Pressure main supply and installation", "Main and secondary canal works", "Social service structures"],
-    metrics: [{ value: "Solar", label: "Powered irrigation" }, { value: "Konso", label: "Project zone" }],
-  },
-  {
-    slug: "dimeka-town-water",
-    title: "Dimeka Town Water Supply & Sanitation",
-    category: "Water & sanitation",
-    location: "Dimeka, Ethiopia",
-    client: "Ministry of Water and Energy",
-    summary: "Water infrastructure spanning electromechanical equipment, pressure mains, distribution, storage, and operational buildings.",
-    scope: ["Electromechanical works and diesel power source", "Pressure main and distribution network installation", "200 m³ reinforced concrete reservoir", "Public water points and network valve chambers", "Road and river crossings", "Generator house, workshop, office, and associated buildings"],
-    metrics: [{ value: "200 m³", label: "Concrete reservoir" }, { value: "Integrated", label: "Water infrastructure" }],
-  },
 ];
 
+export const vision = "To see Barcon Engineering as one of the main entities that contributes to the development of the nation through its quality services and inclusiveness of the disadvantaged community.";
+
+export const mission = "To enhance the nation’s infrastructure—covering water supply, irrigation, sanitation, buildings, and roads—by delivering sustainable, innovative and high-quality construction solutions.";
+
+export const valuesIntro = "At Barcon Engineering, our values guide every decision we make and every project we deliver. They are the foundation of our identity and the driving force behind our success.";
+
 export const values = [
-  ["Integrity", "Honesty, transparency, and ethical conduct in every decision."],
-  ["Quality & excellence", "Reliable engineering, careful workmanship, and continuous improvement."],
-  ["Customer focus", "Responsive communication and commitment to our clients’ objectives."],
-  ["Innovation", "Practical ideas and modern technology that solve real project challenges."],
-  ["Teamwork & accountability", "Shared knowledge, mutual respect, and responsibility for our results."],
+  ["Integrity", "We uphold honesty, transparency, and ethical standards in everything we do."],
+  ["Quality & Excellence", "We deliver reliable, efficient, and sustainable engineering solutions that exceed expectations."],
+  ["Customer Focus", "We put our clients at the center of our work, building trust through responsiveness and commitment."],
+  ["Innovation", "We embrace creativity, modern technology, and continuous improvement to provide smarter solutions."],
+  ["Teamwork & Accountability", "We work collaboratively, respect each other, and take full responsibility for our actions and results."],
+];
+
+export const communityVideo = {
+  eyebrow: "Social responsibility",
+  title: "Serving the community",
+  text: "Alongside the Hobicha Medium-Sized Rural Water Supply project, delivered in joint venture with Bigeta Business PLC, the contractor built an additional water point — Water Point 10, with 1.8 km of pipeline supply and installation — as a donation to the local community.",
+  src: "/videos/hobicha-community.mp4",
+  poster: "/videos/hobicha-community-poster.jpg",
+  label: "Hobicha community water point video",
+  caption: "Water Point 10, donated to the Hobicha community.",
+};
+
+export const qualifications: { title: string; issuer?: string }[] = [
+  { title: "Grade 1 Water Works Contractor", issuer: "Ethiopian Construction Authority" },
+  { title: "Grade 5 General Contractor", issuer: "Ethiopian Construction Authority" },
+  { title: "Electromechanical (EM) Contractor – Grade 5", issuer: "Ethiopian Construction Authority" },
 ];
 
 export const process = [

@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { Icon } from "@/components/icons";
 import { Illustration, PageIntro, ProjectCTA } from "@/components/shared";
 import { process } from "@/lib/content";
-export const metadata: Metadata = pageMetadata("/approach", { title: "Our approach" });
+export const metadata: Metadata = pageMetadata("/approach", { title: "Our approach", description: "How Barcon Engineering plans, builds, verifies, and hands over infrastructure, with quality, safety, and responsibility at every stage." });
 const commitments = [
   { icon: "verified" as const, title: "Quality at every stage", text: "Project Quality Plans, Inspection and Test Plans, and method statements turn requirements into practical controls.", items: ["Design and specification reviews before construction", "Material inspection, testing, and supplier verification", "Documented site inspections and corrective actions", "Performance testing and commissioning before handover"] },
   { icon: "shield" as const, title: "People and safety first", text: "Site-specific planning protects workers and the communities around each project.", items: ["Risk assessment and safe work procedures", "PPE, daily toolbox talks, and safety briefings", "Emergency preparedness and first aid", "Incident and near-miss reporting"] },

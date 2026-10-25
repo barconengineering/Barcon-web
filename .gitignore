@@ -45,4 +45,4 @@ next-env.d.ts
 !.env.example
 
 # Source video kept locally (too large for the repo)
-/public/videos/
+/public/videos/DJI_*

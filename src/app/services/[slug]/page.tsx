@@ -23,6 +23,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     'roads-bridges': [photos.grading, photos.compaction, photos.earthRoad, photos.gravelRoad],
     'solar-energy': [photos.solarArray, photos.solarRows, photos.solarCommunity],
     irrigation: [photos.irrigation],
+    buildings: [photos.generatorHouse, photos.boosterHouse, photos.pipeShed],
     electromechanical: [photos.solarArray, photos.solarRows],
   };
   return <><section className="page-intro"><div className="container"><Link href="/services" className="breadcrumb">Our expertise / {service.shortTitle}</Link><Icon name={serviceIcons[index]} size={42} /><h1>{service.title}</h1><p className="intro-description">{service.summary}</p></div></section>

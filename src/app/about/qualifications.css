@@ -1,4 +1,4 @@
-.qualification-cards{gap:24px}
+.qualification-cards{gap:24px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
 .qualification-cards article{padding:32px;background:var(--surface-alt);border-top:2px solid var(--blue)}
 .qualification-cards h3{font-size:26px;line-height:1.25;max-width:340px}
 .qualification-cards p{margin-top:16px;font-size:15px;color:var(--muted)}
