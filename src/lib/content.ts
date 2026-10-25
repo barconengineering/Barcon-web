@@ -263,6 +263,12 @@ export const projects: Project[] = [
     summary: "Road maintenance and drainage works to improve an existing gravel road corridor.",
     scope: ["Gravel road spot repairs", "Road blading", "Gabion structure construction", "Reinforced concrete pipe production and installation"],
     metrics: [{ value: "Gravel", label: "Road rehabilitation" }, { value: "Drainage", label: "Supporting structures" }],
+    gallery: [
+      { src: "/images/debub-qege-shifa/bedding-under-construction.jpg", alt: "Motor grader shaping a rough earth road between eucalyptus trees and banana plantations, with rocks along the verge", caption: "Road bedding under construction" },
+      { src: "/images/debub-qege-shifa/bedding-work.jpg", alt: "Motor grader working on the road approach to a crossing with stone-masonry parapet walls on both sides", caption: "Bedding work at a crossing" },
+      { src: "/images/debub-qege-shifa/select-compaction.jpg", alt: "Wide compacted red-earth road with dug side ditches, a gravel stockpile and machinery further along through a village", caption: "Selected material compaction" },
+      { src: "/images/debub-qege-shifa/gravel-compaction.jpg", alt: "Freshly laid gravel road surface with a roller compacting further ahead between fenced homesteads", caption: "Gravel surface compaction" },
+    ],
   },
 ];
 
