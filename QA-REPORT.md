@@ -35,9 +35,9 @@ Not verified: real email delivery/receipt (no Resend key or recipient configured
 production performance after deployment, final management factual approval and
 production hosting/analytics configuration. See LAUNCH-CHECKLIST.md.
 
-GitHub publishing is blocked by repository permissions: a dry-run push returned
-403 for local Git account K3d4m. The feature branch is local; neither main nor the
-live deployment has been changed.
+GitHub feature branch codex/client-feedback-2026-11-09 was pushed successfully with K3d4m after authentication on 9 November 2026. Main and the original Barcon deployment remain unchanged.
+
+A separate, public-by-link GPT Sites review copy is deployed at https://barcon-engineering-review-nov-2026.lambacreatives.chatgpt.site. It preserves all 24 content routes and animations, includes the review PDF, and visibly disables contact email sending. Static navigation, filters, PDF download and responsive widths passed before deployment.
 
 ## Original UI restoration verification
 

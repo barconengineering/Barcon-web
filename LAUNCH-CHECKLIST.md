@@ -56,7 +56,7 @@ This Windows host's system Node 24.15.0 failed to start a Turbopack CSS worker. 
 
 The baseline is preserved on `main`; implementation is isolated on the feature branch. Before merge, returning to `main` restores the prior source. After merge, use a normal revert commit or the hosting platform's previous deployment rollback rather than rewriting shared history.
 
-No production deployment or merge is part of this update. Static-only export is not supported for the active `/api/contact` endpoint; use a Next.js server deployment.
+The original Barcon production site has not been deployed or merged. The feature branch is pushed for review. A separately labelled GPT Sites review copy is public by link, with email sending disabled. The main website still requires a Next.js server deployment for its active `/api/contact` endpoint.
 
 ## UI preservation requested in review
 
