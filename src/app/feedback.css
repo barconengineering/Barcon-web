@@ -4,44 +4,214 @@ body {
 }
 .official-brand {
   display: inline-flex;
-}
-.official-logo {
-  display: block;
+  gap: 9px;
   position: relative;
-  width: 66px;
-  height: 74px;
-  overflow: hidden;
 }
-.official-logo img {
+.logo-filter {
   position: absolute;
-  width: 230px;
-  height: auto;
+}
+.official-logo-symbol,
+.official-logo-wordmark {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.official-logo-symbol {
+  width: 60px;
+  height: 66px;
+}
+.official-logo-wordmark {
+  width: 164px;
+  height: 51px;
+}
+.official-brand img {
+  position: absolute;
   max-width: none;
-  left: -19px;
-  top: -3.5px;
+  height: auto;
+}
+.official-logo-symbol img {
+  width: 320px;
+  left: -43px;
+  top: -11px;
+}
+.official-logo-wordmark img {
+  width: 640px;
+  left: -63px;
+  top: -153.5px;
+}
+.site-header {
+  background: rgb(238 246 253 / 86%);
+  color: var(--navy);
+  border-bottom: 1px solid rgb(16 27 43 / 12%);
+  backdrop-filter: blur(20px) saturate(130%);
+  -webkit-backdrop-filter: blur(20px) saturate(130%);
+}
+.header-inner {
+  height: 94px;
+  gap: 24px;
+}
+.header-home {
+  margin-bottom: -94px;
+}
+.main-nav {
+  gap: 24px;
+}
+.main-nav > a:not(.button) {
+  color: #173757;
+}
+.main-nav > a:not(.button):hover,
+.main-nav > a[aria-current="page"]:not(.button) {
+  color: #075a99;
+}
+.main-nav > a[aria-current="page"]:not(.button)::after {
+  background: #804400;
+}
+.approved-hero {
+  padding-top: 94px;
+  min-height: 620px;
+  background: #101b2b;
 }
 .approved-hero .hero-image {
   left: auto !important;
-  width: 74% !important;
-  object-position: center;
+  width: 64% !important;
+  object-fit: contain;
+  object-position: right center;
   z-index: 0;
-  mask-image: linear-gradient(to right, transparent, #000 32%);
+  mask-image: linear-gradient(to right, transparent, #000 24%);
+}
+.motion-home .approved-hero .hero-image {
+  transform: translateY(var(--hero-drift, 0px));
 }
 .approved-hero .hero-shade {
   z-index: 1;
   pointer-events: none;
-  background: linear-gradient(
-    90deg,
-    #101b2b 0%,
-    rgb(16 27 43 / 96%) 18%,
-    rgb(16 27 43 / 76%) 37%,
-    rgb(16 27 43 / 26%) 59%,
-    transparent 84%
-  );
+  background:
+    linear-gradient(
+      90deg,
+      #101b2b 0%,
+      rgb(16 27 43 / 96%) 19%,
+      rgb(16 27 43 / 72%) 37%,
+      rgb(16 27 43 / 13%) 66%,
+      transparent 86%
+    ),
+    linear-gradient(0deg, #101b2b 0%, transparent 16%);
 }
 .approved-hero .hero-content {
   position: relative;
   z-index: 2;
+  padding-block: 48px 58px;
+}
+.approved-hero h1 {
+  font-size: clamp(44px, 4.5vw, 65px);
+}
+.approved-hero .hero-description {
+  max-width: 405px;
+}
+.proof-inner {
+  min-height: 112px;
+}
+.home-service-strip {
+  background: var(--navy);
+  padding: 0 0 40px;
+  color: var(--porcelain);
+}
+.home-service-cards {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 12px;
+}
+.home-service-card {
+  min-width: 0;
+  border: 1px solid #49617a;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #19314b;
+  transition:
+    transform 0.2s,
+    border-color 0.2s;
+}
+.home-service-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--sand);
+}
+.home-service-photo {
+  position: relative;
+  aspect-ratio: 1.35;
+  overflow: hidden;
+}
+.home-service-photo img {
+  object-fit: cover;
+}
+.home-service-card[href="/services/buildings"] img {
+  object-position: center 15%;
+}
+.home-service-label {
+  display: grid;
+  grid-template-columns: 23px 1fr;
+  gap: 9px;
+  align-items: start;
+  padding: 15px 12px;
+  min-height: 96px;
+}
+.home-service-label h3 {
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.home-service-label > svg:last-child {
+  display: none;
+}
+@media (max-width: 1100px) {
+  .official-logo-symbol {
+    width: 48px;
+    height: 53px;
+  }
+  .official-logo-symbol img {
+    width: 256px;
+    left: -34.4px;
+    top: -8.8px;
+  }
+  .official-logo-wordmark {
+    width: 131px;
+    height: 41px;
+  }
+  .official-logo-wordmark img {
+    width: 512px;
+    left: -50.4px;
+    top: -122.8px;
+  }
+  .main-nav {
+    gap: 16px;
+  }
+  .main-nav > a:not(.button) {
+    font-size: 12px;
+  }
+  .home-service-cards {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .home-service-label {
+    min-height: 85px;
+  }
+  .home-service-card:last-child {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .home-service-card:last-child .home-service-label {
+    align-self: center;
+  }
+}
+@media (max-width: 900px) {
+  .main-nav.is-open {
+    top: 94px;
+    background: #eef6fd;
+    border-bottom: 1px solid #c3d3df;
+  }
+  .main-nav.is-open > a:not(.button) {
+    color: #173757;
+  }
 }
 .service-links > a {
   grid-template-columns: 80px 1fr 24px;
@@ -370,22 +540,34 @@ figcaption {
   }
 }
 @media (max-width: 767px) {
-  .official-logo {
-    width: 54px;
-    height: 60px;
+  .header-inner {
+    height: 78px;
   }
-  .official-logo img {
-    width: 188px;
-    left: -15.5px;
-    top: -3px;
+  .header-home {
+    margin-bottom: -78px;
+  }
+  .main-nav.is-open {
+    top: 78px;
+  }
+  .home-service-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .home-service-label {
+    min-height: 90px;
+    padding: 13px 10px;
+  }
+  .home-service-strip {
+    padding-bottom: 28px;
   }
   .approved-hero {
+    padding-top: 78px;
     flex-direction: column;
     min-height: 0;
   }
   .approved-hero .hero-content {
     order: 1;
-    padding-block: 48px 36px;
+    padding-block: 42px 36px;
   }
   .approved-hero .hero-image {
     order: 2;
@@ -467,6 +649,20 @@ figcaption {
 }
 @media (prefers-reduced-motion: reduce) {
   .experience-card:hover .project-cover img {
+    transform: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .approved-hero h1 {
+    font-size: clamp(36px, 8.9vw, 60px);
+  }
+  .motion-home .approved-hero .hero-image {
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-service-card:hover {
     transform: none;
   }
 }

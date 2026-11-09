@@ -7,6 +7,7 @@ import { Brand } from "./brand";
 import { Icon } from "./icons";
 
 const links = [
+  ["Home", "/"],
   ["About us", "/about"],
   ["Our expertise", "/services"],
   ["Projects", "/projects"],
@@ -28,7 +29,7 @@ export function Header() {
     return () => document.removeEventListener("keydown", handleKey);
   }, [open]);
   return (
-    <header className="site-header">
+    <header className={`site-header ${pathname === "/" ? "header-home" : ""}`}>
       <div className="container header-inner">
         <Brand onNavigate={() => setOpen(false)} />
         <button

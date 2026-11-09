@@ -2,7 +2,7 @@ import { pageMetadata } from "@/lib/site";
 export const metadata = pageMetadata("/", {});
 import Image from "next/image";
 import Link from "next/link";
-import { Icon } from "@/components/icons";
+import { Icon, serviceIcons } from "@/components/icons";
 import { ProjectCTA, TextLink } from "@/components/shared";
 import { process, projects, services } from "@/lib/content";
 
@@ -21,7 +21,7 @@ export default function Home() {
           src="/images/approved-water-point.png"
           alt="Illustration of an Ethiopian woman and girl collecting water from a brass tap into a yellow jerrycan, with an elevated water tank behind them"
           fill
-          sizes="(max-width: 767px) 100vw, 74vw"
+          sizes="(max-width: 767px) 100vw, 64vw"
           preload
         />
         <div className="hero-shade" />
@@ -66,6 +66,40 @@ export default function Home() {
           </p>
         </div>
       </div>
+
+      <section
+        className="home-service-strip"
+        aria-labelledby="home-services-title"
+      >
+        <div className="container">
+          <h2 id="home-services-title" className="sr-only">
+            Explore our seven areas of expertise
+          </h2>
+          <div className="home-service-cards">
+            {services.map((service, index) => (
+              <Link
+                href={`/services/${service.slug}`}
+                key={service.slug}
+                className="home-service-card"
+              >
+                <div className="home-service-photo">
+                  <Image
+                    src={service.image.src}
+                    alt={service.image.alt}
+                    fill
+                    sizes="(max-width: 600px) 48vw, (max-width: 1100px) 24vw, 14vw"
+                  />
+                </div>
+                <div className="home-service-label">
+                  <Icon name={serviceIcons[index]} size={23} />
+                  <h3>{service.title}</h3>
+                  <Icon name="diagonal" size={16} />
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="section container home-about">
         <div>

@@ -37,7 +37,7 @@ The old `/services/roads-bridges` and `/services/import-export` URLs permanently
 
 ## Design preservation
 
-The client feedback changes content and imagery; it does not request a white theme or removal of animation. The original navy header, palette (including system dark mode), homepage section order, scroll reveals and animated infrastructure diagram are retained. The approved water-point illustration replaces the old hero visual. Service thumbnails, capability groups and portfolio filters implement the specific feedback.
+The client feedback changes content and imagery; it does not request a white theme or removal of animation. The navy palette (including system dark mode), scroll reveals and animated infrastructure diagram are retained. The latest user-approved layout uses a translucent blurred header, a background-free horizontal presentation of the original logo, a wider hero view and seven clickable service cards immediately below the hero statistics. Remaining sections preserve the earlier flow. The approved water-point illustration replaces the old hero visual. Service thumbnails, capability groups and portfolio filters implement the specific feedback.
 
 ## Enquiries
 

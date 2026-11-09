@@ -58,3 +58,9 @@ The earlier 8 automated tests remain the content/contact baseline; these unchang
 The requested original blue-and-brown logo on light gray is used in the header and footer, preserving source pixels. The hero now blends continuously from navy into the approved water illustration with no hard vertical edge; mobile uses a vertical fade.
 
 The final production build, TypeScript, lint, all-route/width audit, light/dark contrast sample, navigation and animation checks passed. Contrast was measured with entry animations disabled to avoid transient fade-frame readings. A 28-page client review PDF and 41 matching screenshots record completed and pending feedback items. All PDF pages were rendered for visual review.
+
+## Latest reference-layout refinement
+
+Original logo artwork is rendered horizontally without a rectangular background using an SVG alpha filter. A translucent blurred header, wider hero framing and seven editable photo cards beneath the statistics implement the latest user request. Real service photography and corrected labels are retained; the original process and motion remain.
+
+Production build, TypeScript and lint passed. All 24 routes passed 320/768/1024/1440px overflow checks. Ten-page light/dark automated accessibility samples, mobile navigation and retained animation checks passed. Desktop/mobile screenshots and the 28-page review PDF were refreshed.

@@ -9,8 +9,8 @@ Illustrative image, not evidence of a named project. Alt text identifies it as a
 OFFICIAL LOGO
 public/images/official-logo-source.jpg
 Exact copy of 03_Official_Barcon_Logo.jpg (four-variant source sheet).
-Brand component displays the top-left original blue-and-brown variant on its light gray background, using a CSS crop within the navy header.
-Original proportions, colours and lettering are preserved without recolouring or blending. No recreated wordmark.
+Brand component uses the top-left original blue-and-brown source pixels. The symbol and original wordmark are independently cropped into a horizontal arrangement. An SVG alpha filter removes the neutral background at render time; the source image remains unchanged.
+The coloured artwork and lettering are preserved without regeneration or retyping. The navigation uses a translucent blurred background. No recreated wordmark.
 An original vector/transparent version remains desirable for publication quality.
 
 CURRENT SERVICE AND PROJECT PHOTOGRAPHY
