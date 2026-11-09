@@ -57,3 +57,10 @@ This Windows host's system Node 24.15.0 failed to start a Turbopack CSS worker. 
 The baseline is preserved on `main`; implementation is isolated on the feature branch. Before merge, returning to `main` restores the prior source. After merge, use a normal revert commit or the hosting platform's previous deployment rollback rather than rewriting shared history.
 
 No production deployment or merge is part of this update. Static-only export is not supported for the active `/api/contact` endpoint; use a Next.js server deployment.
+
+## UI preservation requested in review
+
+- Original navy styling, homepage flow, scroll reveals, animated infrastructure diagram and dark theme restored.
+- Approved hero illustration, official logo and factual content corrections retained.
+- About sequence restored: story, founder, mission/vision, values, community, qualifications, with new recognition following qualifications.
+- The feedback does not request a white homepage or a wholesale redesign.

@@ -30,10 +30,14 @@ The site has 24 content routes: seven top-level pages, seven service detail page
 
 - Company details, approved copy, service groups and projects: `src/lib/content.ts`.
 - Page templates: `src/app`; shared UI: `src/components`.
-- Base styles: `src/app/globals.css`; November feedback styling: `src/app/feedback.css`.
+- Base styles: `src/app/globals.css`; Additive content styles: `src/app/feedback.css`.
 - Image provenance: `ASSETS.txt`; publication dependencies: `LAUNCH-CHECKLIST.md`.
 
 The old `/services/roads-bridges` and `/services/import-export` URLs permanently redirect to the corrected road-maintenance and equipment/materials routes.
+
+## Design preservation
+
+The client feedback changes content and imagery; it does not request a white theme or removal of animation. The original navy header, palette (including system dark mode), homepage section order, scroll reveals and animated infrastructure diagram are retained. The approved water-point illustration replaces the old hero visual. Service thumbnails, capability groups and portfolio filters implement the specific feedback.
 
 ## Enquiries
 

@@ -7,7 +7,6 @@ import { Brand } from "./brand";
 import { Icon } from "./icons";
 
 const links = [
-  ["Home", "/"],
   ["About us", "/about"],
   ["Our expertise", "/services"],
   ["Projects", "/projects"],

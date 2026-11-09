@@ -4,14 +4,13 @@ Updated 9 November 2026
 CURRENT HOMEPAGE
 public/images/approved-water-point.png
 Exact copy of management-supplied 02_Water_Point_Final_Accepted.png.
-Illustrative image, not evidence of a named project. Alt text and visible caption
-identify it as an illustration. Navigation, headings, facts, and cards are HTML.
+Illustrative image, not evidence of a named project. Alt text identifies it as an illustration. Navigation, headings, facts, and cards are HTML.
 
 OFFICIAL LOGO
 public/images/official-logo-source.jpg
 Exact copy of 03_Official_Barcon_Logo.jpg (four-variant source sheet).
-Brand component displays the top-left official colour variant with a CSS crop.
-Original proportions, colours and lettering are preserved. No recreated wordmark.
+Brand component displays the bottom-right official white variant with a CSS crop on the original navy header.
+Original proportions and lettering are preserved; screen blending removes the black backing. No recreated wordmark.
 An original vector/transparent version remains desirable for publication quality.
 
 CURRENT SERVICE AND PROJECT PHOTOGRAPHY

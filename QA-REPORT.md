@@ -38,3 +38,17 @@ production hosting/analytics configuration. See LAUNCH-CHECKLIST.md.
 GitHub publishing is blocked by repository permissions: a dry-run push returned
 403 for local Git account K3d4m. The feature branch is local; neither main nor the
 live deployment has been changed.
+
+## Original UI restoration verification
+
+After restoring the original palette, homepage flow and animation hooks:
+
+- Production build / TypeScript and ESLint passed again.
+- All 24 routes returned 200 with one H1 and no overflow at 320, 768, 1024 and 1440px.
+- Both redirects, missing-page 404, all three certificate PDFs and 24 sitemap URLs passed again.
+- Axe found no tested A/AA violations on ten representative pages in both light and dark schemes.
+- Scroll-driven infrastructure progress changed from 0 to 0.888 on scrolling; the content reveal became visible. Reduced motion renders the complete diagram at progress 1.
+- Mobile navigation opens, closes with Escape and restores focus.
+- Updated desktop and mobile homepage screenshots were visually reviewed.
+
+The earlier 8 automated tests remain the content/contact baseline; these unchanged paths were not retested for the presentation-only restoration.

@@ -113,6 +113,37 @@ export default function AboutPage() {
           <p>{mission}</p>
         </article>
       </section>
+      <section className="section container">
+        <div className="section-heading">
+          <h2>The values behind our work.</h2>
+        </div>
+        <div className="values-grid">
+          {values.map(([title, text]) => (
+            <article key={title}>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section className="section section-tinted">
+        <div className="container community-story">
+          <div>
+            <p className="eyebrow">Community water access</p>
+            <h2>Serving the community.</h2>
+            <p>{communityVideo.text}</p>
+          </div>
+          <video
+            controls
+            preload="none"
+            poster={communityVideo.poster}
+            aria-label="Community water access at Hobicha"
+          >
+            <source src={communityVideo.src} type="video/mp4" />
+            <a href={communityVideo.src}>Watch the Hobicha community video</a>
+          </video>
+        </div>
+      </section>
       <section className="section section-tinted" id="qualifications">
         <div className="container">
           <div className="section-heading">
@@ -170,37 +201,6 @@ export default function AboutPage() {
               drinking water supply and sanitation project in the area.
             </p>
           </article>
-        </div>
-      </section>
-      <section className="section section-tinted">
-        <div className="container community-story">
-          <div>
-            <p className="eyebrow">Community water access</p>
-            <h2>Serving the community.</h2>
-            <p>{communityVideo.text}</p>
-          </div>
-          <video
-            controls
-            preload="none"
-            poster={communityVideo.poster}
-            aria-label="Community water access at Hobicha"
-          >
-            <source src={communityVideo.src} type="video/mp4" />
-            <a href={communityVideo.src}>Watch the Hobicha community video</a>
-          </video>
-        </div>
-      </section>
-      <section className="section container">
-        <div className="section-heading">
-          <h2>The values behind our work.</h2>
-        </div>
-        <div className="values-grid">
-          {values.map(([title, text]) => (
-            <article key={title}>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </article>
-          ))}
         </div>
       </section>
       <ProjectCTA />
