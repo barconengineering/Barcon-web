@@ -52,3 +52,9 @@ After restoring the original palette, homepage flow and animation hooks:
 - Updated desktop and mobile homepage screenshots were visually reviewed.
 
 The earlier 8 automated tests remain the content/contact baseline; these unchanged paths were not retested for the presentation-only restoration.
+
+## Final logo and hero review
+
+The requested original blue-and-brown logo on light gray is used in the header and footer, preserving source pixels. The hero now blends continuously from navy into the approved water illustration with no hard vertical edge; mobile uses a vertical fade.
+
+The final production build, TypeScript, lint, all-route/width audit, light/dark contrast sample, navigation and animation checks passed. Contrast was measured with entry animations disabled to avoid transient fade-frame readings. A 28-page client review PDF and 41 matching screenshots record completed and pending feedback items. All PDF pages were rendered for visual review.

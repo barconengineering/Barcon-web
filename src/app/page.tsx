@@ -21,7 +21,7 @@ export default function Home() {
           src="/images/approved-water-point.png"
           alt="Illustration of an Ethiopian woman and girl collecting water from a brass tap into a yellow jerrycan, with an elevated water tank behind them"
           fill
-          sizes="(max-width: 767px) 100vw, 70vw"
+          sizes="(max-width: 767px) 100vw, 74vw"
           preload
         />
         <div className="hero-shade" />

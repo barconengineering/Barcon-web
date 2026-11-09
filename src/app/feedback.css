@@ -8,23 +8,40 @@ body {
 .official-logo {
   display: block;
   position: relative;
-  width: 64px;
-  height: 76px;
+  width: 66px;
+  height: 74px;
   overflow: hidden;
 }
 .official-logo img {
   position: absolute;
-  width: 256px;
+  width: 230px;
   height: auto;
   max-width: none;
-  left: -164px;
-  top: -98px;
-  mix-blend-mode: screen;
+  left: -19px;
+  top: -3.5px;
 }
 .approved-hero .hero-image {
   left: auto !important;
-  width: 70% !important;
+  width: 74% !important;
   object-position: center;
+  z-index: 0;
+  mask-image: linear-gradient(to right, transparent, #000 32%);
+}
+.approved-hero .hero-shade {
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    #101b2b 0%,
+    rgb(16 27 43 / 96%) 18%,
+    rgb(16 27 43 / 76%) 37%,
+    rgb(16 27 43 / 26%) 59%,
+    transparent 84%
+  );
+}
+.approved-hero .hero-content {
+  position: relative;
+  z-index: 2;
 }
 .service-links > a {
   grid-template-columns: 80px 1fr 24px;
@@ -354,13 +371,13 @@ figcaption {
 }
 @media (max-width: 767px) {
   .official-logo {
-    width: 52px;
-    height: 62px;
+    width: 54px;
+    height: 60px;
   }
   .official-logo img {
-    width: 208px;
-    left: -133px;
-    top: -80px;
+    width: 188px;
+    left: -15.5px;
+    top: -3px;
   }
   .approved-hero {
     flex-direction: column;
@@ -377,6 +394,8 @@ figcaption {
     height: auto !important;
     aspect-ratio: 3/2;
     object-fit: contain;
+    mask-image: linear-gradient(to bottom, transparent, #000 20%);
+    margin-top: -24px;
   }
   .approved-hero .hero-shade {
     display: none;

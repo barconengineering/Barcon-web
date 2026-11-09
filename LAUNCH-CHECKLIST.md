@@ -38,7 +38,7 @@ The user confirmed on 9 November 2026 that unavailable materials may be supplied
 
 - Confirm all ten project statuses as current. Dates/percentages in historical evidence must not be reused as current progress.
 - Confirm roles, clients, locations and photo captions, including JV partners and public-use permission.
-- Validate the all-time project count independently. The unverified “19+ projects delivered” claim is omitted; the homepage shows 2016 and seven disciplines.
+- Validate the all-time project count independently. The unverified “19+ projects delivered” claim is omitted; the homepage shows 2016, ten selected project profiles and seven disciplines.
 - Confirm current certificate renewal/validity with management. Do not infer expiry from filenames or ignore renewal pages.
 - Confirm `info@barconengineering.com`, `+251 901 223 150`, and Imperial Plaza Building, Office 201, Woreda 02, Lemi Kura Sub-City, Addis Ababa.
 - Confirm email retention and actual operating practices. Privacy copy avoids inventing a retention period or claiming absence of all provider processing.
