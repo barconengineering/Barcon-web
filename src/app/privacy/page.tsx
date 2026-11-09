@@ -1,8 +1,62 @@
 import { pageMetadata } from "@/lib/site";
-import type { Metadata } from "next";
 import { company } from "@/lib/content";
 import { PageIntro } from "@/components/shared";
-export const metadata: Metadata = pageMetadata("/privacy", { title: "Website privacy", description: "How the Barcon Engineering website handles enquiries submitted through the contact form." });
+export const metadata = pageMetadata("/privacy", {
+  title: "Website privacy",
+  description:
+    "How Barcon Engineering handles website enquiries and website usage information.",
+});
 export default function PrivacyPage() {
-  return <><PageIntro label="Website information" title="Your enquiry, in your control.">How the contact features on this website work.</PageIntro><section className="section container prose"><h2>Contact enquiries</h2><p>When you submit the enquiry form, your name, email address, phone number (if provided), area of interest, and message are sent to the Barcon team by email. The website does not store your enquiry in a database.</p><p>Enquiry emails are delivered through our email provider, Resend, and are then handled by Barcon’s email provider. We use your email address only to reply to your enquiry. You can also contact Barcon directly at <a href={`mailto:${company.email}`}>{company.email}</a>.</p><h2>Cookies and analytics</h2><p>This website does not include advertising trackers, analytics scripts, or a website account system. Its contact form does not save your entries after you reload or leave the page.</p><h2>External links</h2><p>The address link opens a search in Google Maps. External websites and email applications operate under their own privacy policies.</p><h2>Questions</h2><p>For questions about information you have sent to Barcon, email <a href={`mailto:${company.email}`}>{company.email}</a> or call <a href={`tel:${company.phoneHref}`}>{company.phone}</a>.</p></section></>;
+  return (
+    <>
+      <PageIntro label="Website information" title="Privacy and enquiries.">
+        How this website handles the information you share.
+      </PageIntro>
+      <section className="section container prose">
+        <h2>Information you provide</h2>
+        <p>
+          The contact form collects your name, email address, optional phone
+          number, area of interest and message. Please include only information
+          needed to discuss your enquiry, and avoid sending sensitive personal
+          information through this form.
+        </p>
+        <h2>How enquiries are handled</h2>
+        <p>
+          Enquiries are sent to Barcon Engineering by email using Resend, our
+          email delivery provider, and then handled in Barcon’s email system. We
+          use the details you provide to respond to your enquiry. The website
+          application does not save enquiries in a database.
+        </p>
+        <p>
+          Email messages and related delivery records may be retained in the
+          email systems used to handle enquiries. To ask about retention or
+          request deletion of information you have sent, contact{" "}
+          <a href={`mailto:${company.email}`}>{company.email}</a>.
+        </p>
+        <h2>Website analytics and hosting</h2>
+        <p>
+          The site includes Vercel Web Analytics to understand aggregate website
+          usage and improve the site. Hosting and email providers may also
+          process technical information needed to deliver and protect their
+          services.
+        </p>
+        <p>
+          This website has no visitor accounts or advertising features. The
+          enquiry form does not save your entries in browser storage after you
+          reload or leave the page.
+        </p>
+        <h2>External services</h2>
+        <p>
+          The address link opens Google Maps. External websites, hosting
+          services and email providers operate under their own privacy policies.
+        </p>
+        <h2>Questions</h2>
+        <p>
+          Contact <a href={`mailto:${company.email}`}>{company.email}</a> or
+          call <a href={`tel:${company.phoneHref}`}>{company.phone}</a> about
+          information you have shared with Barcon.
+        </p>
+      </section>
+    </>
+  );
 }
