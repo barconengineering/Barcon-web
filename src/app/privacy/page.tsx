@@ -41,6 +41,10 @@ export default function PrivacyPage() {
           services.
         </p>
         <p>
+          Vercel Web Analytics does not use cookies, and this website does not
+          set advertising or tracking cookies.
+        </p>
+        <p>
           This website has no visitor accounts or advertising features. The
           enquiry form does not save your entries in browser storage after you
           reload or leave the page.

@@ -7,20 +7,26 @@ Exact copy of management-supplied 02_Water_Point_Final_Accepted.png.
 Illustrative image, not evidence of a named project. Alt text identifies it as an illustration. Navigation, headings, facts, and cards are HTML.
 
 OFFICIAL LOGO
-public/images/official-logo-source.jpg
-Exact copy of 03_Official_Barcon_Logo.jpg (four-variant source sheet).
-Brand component uses the top-left original blue-and-brown source pixels. The symbol and original wordmark are independently cropped into a horizontal arrangement. An SVG alpha filter removes the neutral background at render time; the source image remains unchanged.
-The coloured artwork and lettering are preserved without regeneration or retyping. The navigation uses a translucent blurred background. No recreated wordmark.
-An original vector/transparent version remains desirable for publication quality.
+public/barcon-logo-color.png (330x378), public/barcon-logo-white.png (325x374), public/barcon-logo-black.png (325x374)
+Official stacked logo on transparent backgrounds, supplied by management. The Brand component shows each file whole as a single image: colour in the header, white in the footer and on dark backgrounds, black for single-colour use. The symbol and wordmark are never cropped, separated, stretched or recoloured.
+The earlier horizontal crop of 03_Official_Barcon_Logo.jpg (public/images/official-logo-source.jpg) is removed; the original remains in the supplied asset ZIP.
+An original vector version remains desirable for publication quality.
 
 CURRENT SERVICE AND PROJECT PHOTOGRAPHY
 Existing repository photographs are retained with project-specific captions where
 already identified. The service card maps are in src/lib/content.ts. Roads use the
 Debub Qege Shifa gravel road photographs. Buildings show the Kelle utility office.
+Ade-Dawe Phase II uses six photographs in public/images/ade-dawe/, taken from the
+supplied archive "Ade Dawe WSP Specific Photos.zip" (10 November 2026) and renamed
+without quantities: trench, service reservoir, two valve chambers and water point.
 Electromechanical work uses pumps, generator and dosing equipment. Supply imagery
 shows actual HDPE storage at Dimeka, not a claim of inventory or GC installation.
 DCI and GC product photographs remain a requested input; inaccurate old pipe art
-is not used. No general solar image is assigned to a named project without evidence.
+is not used. The solar pumping station project uses one drone photograph as its
+cover (public/images/solar/pumping-station-aerial-01.jpg), resized to 1920px JPEG
+from the supplied folder
+"Solar Project Photos" (10 November 2026). Which of the three stations
+(Beneya, Garbota, Birbiskela) they show is not stated, so captions stay generic.
 Confirm photograph provenance/public-use permission at final company sign-off.
 
 SUPERSEDED ASSETS
@@ -36,10 +42,19 @@ sections by raster rebuilding, which also discards underlying OCR and metadata.
 Qualification/issuer and renewal pages are retained. Originals are unchanged.
 No current-validity claim is made solely from these source copies.
 
+RECOGNITION
+public/images/recognition/ministry-water-energy-week-certificate.jpg is the supplied
+scan (1114x754) of the Ministry of Water and Energy Certificate of Appreciation for
+supporting sponsorship of the 3rd Ethiopian Water and Energy Week, received
+10 November 2026 and displayed on the About page.
+public/images/recognition/hobicha-woreda-certificate.jpg is the supplied scan
+(1093x845, received as a WhatsApp image) of the Hobicha Woreda Certificate of
+Appreciation in Amharic, received 10 November 2026 and displayed on the About page.
+No translation of its text is published.
+
 MISSING ASSETS
-Original Ministry of Water and Energy and Hobicha recognition certificate images;
-verified Ade-Dawe project photographs and description; photo identification for the
-remaining missing project galleries. See LAUNCH-CHECKLIST.md for the full list.
+The verified Ade-Dawe description; photo identification for the remaining missing
+project galleries. See LAUNCH-CHECKLIST.md for the full list.
 
 FONTS AND ICONS
 Satoshi variable WOFF2: Fontshare / Indian Type Foundry.
@@ -48,6 +63,7 @@ Phosphor Icons for React: MIT, supplied with the installed package.
 
 CONTENT AUTHORITY
 Management feedback dated 9 November 2026 supplies the approved copy and portfolio
-statuses, subject to stated factual verification. Repository historical JV evidence
+statuses; management confirmed all ten statuses current on 10 November 2026.
+Other facts remain subject to stated verification. Repository historical JV evidence
 is retained where relevant. Document instructions are project reference material;
 implementation proceeds under the user's explicit approval in the chat.

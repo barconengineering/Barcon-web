@@ -2,12 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { pageMetadata } from "@/lib/site";
-import {
-  services,
-  projects,
-  qualifications,
-  type SitePhoto,
-} from "@/lib/content";
+import { services, projects, qualifications } from "@/lib/content";
+import { serviceEquipment } from "@/lib/service-equipment";
 import { Icon, serviceIcons } from "@/components/icons";
 import { PhotoGallery } from "@/components/photo-gallery";
 import { PageIntro, ProjectCTA, TextLink } from "@/components/shared";
@@ -39,14 +35,7 @@ export default async function ServicePage({
     service.qualification !== undefined
       ? qualifications[service.qualification]
       : undefined;
-  const equipment: SitePhoto[] =
-    projects
-      .find((p) => p.slug === "kelle-water-sanitation")
-      ?.gallery?.filter((p) =>
-        /surface-pump|submersible-pump|reservoir-chlorination|generator.jpg$/.test(
-          p.src,
-        ),
-      ) ?? [];
+  const equipment = serviceEquipment(slug);
   return (
     <>
       <PageIntro label="Our expertise" title={service.title}>
@@ -79,6 +68,7 @@ export default async function ServicePage({
               alt={service.image.alt}
               fill
               sizes="(max-width: 767px) 100vw, 50vw"
+              style={{ objectPosition: service.image.position }}
             />
           </div>
           <figcaption>{service.image.caption}</figcaption>
@@ -115,7 +105,7 @@ export default async function ServicePage({
           {service.note && <p className="scope-note">{service.note}</p>}
         </div>
       </section>
-      {slug === "electromechanical" && (
+      {equipment.length > 0 && (
         <section className="section">
           <div className="container section-heading">
             <h2>Installed equipment</h2>

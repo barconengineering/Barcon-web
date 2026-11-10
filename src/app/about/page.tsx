@@ -1,10 +1,13 @@
 import Image from "next/image";
 import { pageMetadata } from "@/lib/site";
 import { PageIntro, ProjectCTA } from "@/components/shared";
+import { HeroVideo } from "@/components/hero-video";
+import { CertificateViewer } from "@/components/certificate-viewer";
 import {
   communityVideo,
   mission,
   qualifications,
+  recognition,
   values,
   vision,
 } from "@/lib/content";
@@ -67,7 +70,7 @@ export default function AboutPage() {
             />
           </div>
           <div>
-            <p className="eyebrow">Founder & General Manager</p>
+            <p className="eyebrow">Founder and General Manager</p>
             <h2>Bilhan Haile</h2>
             <p>
               Bilhan Haile is a Hydraulic and Water Resources Engineer with a
@@ -126,22 +129,22 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
-      <section className="section section-tinted">
-        <div className="container community-story">
-          <div>
-            <p className="eyebrow">Community water access</p>
-            <h2>Serving the community.</h2>
-            <p>{communityVideo.text}</p>
-          </div>
-          <video
-            controls
-            preload="none"
-            poster={communityVideo.poster}
-            aria-label="Community water access at Hobicha"
-          >
-            <source src={communityVideo.src} type="video/mp4" />
-            <a href={communityVideo.src}>Watch the Hobicha community video</a>
-          </video>
+      <section
+        className="hero hero-video-version community-hero"
+        aria-labelledby="community-title"
+      >
+        <HeroVideo
+          sources={[{ src: communityVideo.src, type: "video/mp4" }]}
+          poster={communityVideo.poster}
+          lazy
+          sound
+        />
+        <div className="hero-shade" />
+        <div className="container hero-content">
+          <p className="eyebrow">{communityVideo.eyebrow}</p>
+          <h2 id="community-title">{communityVideo.title}</h2>
+          <p className="hero-description">{communityVideo.text}</p>
+          <p className="community-caption">{communityVideo.caption}</p>
         </div>
       </section>
       <section className="section section-tinted" id="qualifications">
@@ -180,27 +183,16 @@ export default function AboutPage() {
           </h2>
         </div>
         <div className="recognition-grid">
-          <article>
-            <span className="eyebrow">National sector engagement</span>
-            <h3>Supporting Ethiopia’s water and energy sector</h3>
-            <p>
-              Barcon Engineering received a Certificate of Appreciation from the
-              Ministry of Water and Energy for its supporting sponsorship of the
-              3rd Ethiopian Water and Energy Week, held on 26–30 October 2026 in
-              Addis Ababa.
-            </p>
-            <p>This recognition acknowledges sponsorship of the event.</p>
-          </article>
-          <article>
-            <span className="eyebrow">Community recognition</span>
-            <h3>Recognized by the Hobicha community</h3>
-            <p>
-              Barcon Engineering received a Certificate of Appreciation from the
-              Hobicha Woreda administration in Wolayita, Ethiopia, in
-              recognition of its contribution to the implementation of a
-              drinking water supply and sanitation project in the area.
-            </p>
-          </article>
+          {recognition.map((item) => (
+            <article key={item.title}>
+              <span className="eyebrow">{item.eyebrow}</span>
+              <h3>{item.title}</h3>
+              {item.text.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+              <CertificateViewer photo={item.image} label={item.title} />
+            </article>
+          ))}
         </div>
       </section>
       <ProjectCTA />

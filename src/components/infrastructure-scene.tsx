@@ -1,7 +1,6 @@
 'use client';
 import { useEffect, useId, useRef } from 'react';
 
-// Original filled artwork; surrounding schematic contours removed at user request.
 export function InfrastructureDrawing({ animated = false }: { animated?: boolean }) {
   const id = useId().replace(/:/g, '');
   return <svg className={`infrastructure-drawing ${animated ? 'drawing-build' : ''}`} viewBox="0 0 1000 720" fill="none" role="img" aria-label="Illustrative irrigation system with a river intake, canal, reservoir, pump house and solar arrays">
@@ -76,7 +75,6 @@ export function BoxedInfrastructure() {
     const update = () => {
       frame = 0;
       const rect = node.getBoundingClientRect();
-      // Fit the original sequence to this existing frame, without adding a tall sticky section.
       const progress = reduced.matches ? 1 : clamp((innerHeight * .9 - rect.top) / (innerHeight * (mobile.matches ? .55 : .7)));
       node.style.setProperty('--progress', String(progress));
       ['canal', 'reservoir', 'pump', 'solar', 'pipes'].forEach((name, index) => {

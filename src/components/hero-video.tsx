@@ -4,14 +4,11 @@ import { useEffect } from "react";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { useVideoPlayback } from "@/hooks/use-video-playback";
 
-type HeroVideoProps = { sources?: { src: string; type: string }[]; poster?: string; lazy?: boolean; sound?: boolean };
+type HeroVideoProps = { sources: { src: string; type: string }[]; poster: string; lazy?: boolean; sound?: boolean };
 
-const defaultSources = [{ src: "/hero.webm", type: "video/webm" }, { src: "/hero.mp4", type: "video/mp4" }];
-
-export function HeroVideo({ sources = defaultSources, poster = "/hero-poster.jpg", lazy = false, sound = false }: HeroVideoProps) {
+export function HeroVideo({ sources, poster, lazy = false, sound = false }: HeroVideoProps) {
   const reducedMotion = useReducedMotion();
   const { video, muted, toggleSound } = useVideoPlayback();
-  // Lazy videos only download and start playing once they scroll into view.
   useEffect(() => {
     const el = video.current;
     if (!lazy || reducedMotion || !el) return;

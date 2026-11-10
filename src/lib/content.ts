@@ -1,4 +1,9 @@
-export type SitePhoto = { src: string; alt: string; caption: string };
+export type SitePhoto = {
+  src: string;
+  alt: string;
+  caption: string;
+  position?: string;
+};
 export type Service = {
   slug: string;
   title: string;
@@ -23,9 +28,22 @@ export type Project = {
   gallery?: SitePhoto[];
   cover?: SitePhoto;
 };
+export type Recognition = {
+  eyebrow: string;
+  title: string;
+  text: string[];
+  image: SitePhoto;
+};
+export type HomeStat = {
+  id: "founded" | "projects" | "expertise";
+  value: string;
+  label: string;
+  labelFirst?: boolean;
+};
 
 export const company = {
   name: "Barcon Engineering",
+  founded: 2016,
   email: "info@barconengineering.com",
   phone: "+251 901 223 150",
   phoneHref: "+251901223150",
@@ -91,22 +109,15 @@ export const services: Service[] = [
       "Barcon undertakes irrigation infrastructure works drawing on hydraulic, civil, pipeline and electromechanical expertise. We connect water conveyance, control structures and pumping infrastructure to the needs of agricultural production.",
     groups: [
       {
-        title: "Water conveyance and distribution",
+        title: "Technical capabilities",
         items: [
           "Irrigation canals and water conveyance pipelines",
           "Distribution and control structures",
-        ],
-      },
-      {
-        title: "Pumping infrastructure",
-        items: [
           "Pumping infrastructure and pump houses",
           "Associated civil works and electromechanical integration",
+          "Hydraulic structures",
+          "Earthworks and concrete works",
         ],
-      },
-      {
-        title: "Hydraulic and civil works",
-        items: ["Hydraulic structures", "Earthworks and concrete works"],
       },
     ],
     image: {
@@ -151,6 +162,7 @@ export const services: Service[] = [
       src: "/images/kelle/utility-office-construction.jpg",
       alt: "Single-storey utility office with a covered veranda and blue-trimmed walls",
       caption: "Utility office construction at Kelle",
+      position: "50% 15%",
     },
     featuredProject: "kelle-water-sanitation",
     qualification: 1,
@@ -261,7 +273,7 @@ export const services: Service[] = [
         ],
       },
       {
-        title: "Installation and commissioning",
+        title: "System installation and commissioning",
         items: [
           "Electrical connections and pump controls",
           "Testing and handover",
@@ -314,6 +326,7 @@ export const services: Service[] = [
       src: "/images/dimeka/pipe-shade.jpg",
       alt: "Coils of black HDPE pipe sheltered by a steel-framed storage shed",
       caption: "HDPE pipe storage at Dimeka",
+      position: "50% 60%",
     },
     note: "DCI and HDPE installation experience is described on our water infrastructure page. GC pipes are included in our supply scope.",
   },
@@ -328,7 +341,7 @@ export const projects: Project[] = [
     location: "Wolayita Zone, South Ethiopia",
     client: "Ministry of Water and Energy",
     summary:
-      "Rural water infrastructure combining storage, pumping, pipeline networks and public water points. Barcon Engineering delivered the project in joint venture with Bigeta Business PLC.",
+      "Rural water supply with storage, pumping, pipeline networks and public water points. Delivered by Barcon Engineering in joint venture with Bigeta Business PLC.",
     delivery: "Barcon Engineering in joint venture with Bigeta Business PLC",
     gallery: [
       {
@@ -347,22 +360,22 @@ export const projects: Project[] = [
         caption: "Masonry reservoir under construction",
       },
       {
-        src: "/images/hobicha/sandwich-reservoir-50m3.jpg",
+        src: "/images/hobicha/sandwich-reservoir-01.jpg",
         alt: "Completed circular stone-masonry reservoir with a blue-painted roof edge among eucalyptus trees",
-        caption: "booster reservoir",
+        caption: "Booster reservoir",
       },
       {
-        src: "/images/hobicha/service-reservoir-300m3-1.jpg",
+        src: "/images/hobicha/service-reservoir-01.jpg",
         alt: "Large circular concrete reservoir with a blue band and steel access ladder on a gravelled site",
-        caption: "storage reservoir",
+        caption: "Storage reservoir",
       },
       {
-        src: "/images/hobicha/service-reservoir-300m3-2.jpg",
+        src: "/images/hobicha/service-reservoir-02.jpg",
         alt: "Concrete reservoir and a small arched shelter inside a blue-post chain-link fence under a cloudy sky",
-        caption: "storage reservoir compound",
+        caption: "Storage reservoir compound",
       },
       {
-        src: "/images/hobicha/service-reservoir-300m3-3.jpg",
+        src: "/images/hobicha/service-reservoir-03.jpg",
         alt: "Fenced reservoir compound with a blue gate and guard house on a red-earth hilltop",
         caption: "Fenced reservoir site and guard house",
       },
@@ -406,7 +419,7 @@ export const projects: Project[] = [
     location: "Kelle Town, Kore Zone, South Ethiopia Regional State",
     client: "South Ethiopia Regional Water, Mines and Energy Bureau",
     summary:
-      "Water supply and sanitation infrastructure combining pipeline networks, reservoirs, pumping equipment and supporting buildings. Barcon Engineering is undertaking the project in joint venture with Bigeta Business PLC.",
+      "Water supply and sanitation works with pipelines, reservoirs, pumping equipment and support buildings. Undertaken in joint venture with Bigeta Business PLC.",
     delivery: "Barcon Engineering in joint venture with Bigeta Business PLC",
     gallery: [
       {
@@ -425,9 +438,9 @@ export const projects: Project[] = [
         caption: "Pipe laying",
       },
       {
-        src: "/images/kelle/service-reservoir-500m3.jpg",
+        src: "/images/kelle/service-reservoir-01.jpg",
         alt: "Rendered concrete reservoir with blue trim and a rooftop room, surrounded by timber scaffolding",
-        caption: "service reservoir under construction",
+        caption: "Service reservoir under construction",
       },
       {
         src: "/images/kelle/reservoir-chlorination.jpg",
@@ -441,7 +454,7 @@ export const projects: Project[] = [
       },
       {
         src: "/images/kelle/surface-pump.jpg",
-        alt: "Two green surface centrifugal pumps with blue valves and galvanised pipework in a concrete pump pit",
+        alt: "Two green surface centrifugal pumps with blue valves and pipework in a concrete pump pit",
         caption: "Surface pump installation",
       },
       {
@@ -476,9 +489,9 @@ export const projects: Project[] = [
       },
     ],
     cover: {
-      src: "/images/kelle/service-reservoir-500m3.jpg",
+      src: "/images/kelle/service-reservoir-01.jpg",
       alt: "Rendered concrete reservoir with blue trim and a rooftop room, surrounded by timber scaffolding",
-      caption: "service reservoir under construction",
+      caption: "Service reservoir under construction",
     },
   },
   {
@@ -487,7 +500,44 @@ export const projects: Project[] = [
     category: "Water",
     status: "Completed",
     summary:
-      "Phase II water supply project, included in Barcon Engineering’s selected project portfolio.",
+      "Barcon Engineering completed Phase II of the Ade-Dawe water supply scheme. Further project details will be added once confirmed by the client.",
+    gallery: [
+      {
+        src: "/images/ade-dawe/trench-excavation.jpg",
+        alt: "Narrow pipeline trench dug through red soil across a grassy field lined with eucalyptus trees",
+        caption: "Pipeline trench excavation",
+      },
+      {
+        src: "/images/ade-dawe/service-reservoir.jpg",
+        alt: "Circular rendered concrete reservoir with a timber ladder inside a new post-and-wire fence, beside a white plastic tank",
+        caption: "Service reservoir",
+      },
+      {
+        src: "/images/ade-dawe/valve-chamber-01.jpg",
+        alt: "Rendered masonry valve chamber with a white steel access cover set into excavated red soil",
+        caption: "Masonry valve chamber",
+      },
+      {
+        src: "/images/ade-dawe/valve-chamber-02.jpg",
+        alt: "Low concrete valve chamber with a hinged white steel cover on cleared ground with stones behind",
+        caption: "Valve chamber with access cover",
+      },
+      {
+        src: "/images/ade-dawe/water-point.jpg",
+        alt: "Concrete public water point on a slab inside a new timber-post and barbed-wire fence with a corrugated metal gate",
+        caption: "Public water point",
+      },
+      {
+        src: "/images/ade-dawe/water-point-community.jpg",
+        alt: "Water running from the taps of a public water point while community members gather behind the fence",
+        caption: "Water flowing at the public water point",
+      },
+    ],
+    cover: {
+      src: "/images/ade-dawe/water-point-community.jpg",
+      alt: "Water running from the taps of a public water point while community members gather behind the fence",
+      caption: "Water flowing at the public water point",
+    },
   },
   {
     slug: "solar-pumping-stations",
@@ -498,8 +548,13 @@ export const projects: Project[] = [
       "Beneya, Burji Zone; Garbota and Birbiskela, Gedeo Zone — South Ethiopia",
     client: "South Ethiopia Regional State Water and Energy Bureau",
     summary:
-      "Solarization of three rural pumping stations at Beneya, Garbota and Birbiskela in South Ethiopia. Barcon Engineering delivered the project in joint venture with Ehun Business PLC.",
+      "Solarization of three rural pumping stations at Beneya, Garbota and Birbiskela. Delivered in joint venture with Ehun Business PLC.",
     delivery: "Barcon Engineering in joint venture with Ehun Business PLC",
+    cover: {
+      src: "/images/solar/pumping-station-aerial-01.jpg",
+      alt: "Aerial view of a fenced solar array beside a pump house, with community members gathered outside the fence among banana plants",
+      caption: "Solar array and pump house",
+    },
   },
   {
     slug: "dimeka-town-water",
@@ -509,15 +564,15 @@ export const projects: Project[] = [
     location: "Dimeka, Ethiopia",
     client: "Ministry of Water and Energy",
     summary:
-      "Water supply and sanitation infrastructure combining pumping equipment, pressure mains, distribution and storage. The project also includes public water points and operational buildings.",
+      "Water supply and sanitation works covering pumping, pressure mains, distribution and storage. Includes public water points and operational buildings.",
     gallery: [
       {
-        src: "/images/dimeka/service-reservoir-200m3.jpg",
+        src: "/images/dimeka/service-reservoir-01.jpg",
         alt: "Circular concrete reservoir with a blue band and vertical stripe on a red-earth site under a cloudy sky",
-        caption: "service reservoir",
+        caption: "Service reservoir",
       },
       {
-        src: "/images/dimeka/service-reservoir-2.jpg",
+        src: "/images/dimeka/service-reservoir-02.jpg",
         alt: "Rendered concrete reservoir with a light-blue band on a circular apron, with trees and a worker in the background",
         caption: "Service reservoir",
       },
@@ -528,19 +583,19 @@ export const projects: Project[] = [
       },
       {
         src: "/images/dimeka/water-point-1.jpg",
-        alt: "Concrete public water point on a slab with a galvanised steel door and fence posts being installed",
+        alt: "Concrete public water point on a slab with a steel door and fence posts being installed",
         caption: "Public water point and fencing",
       },
       {
         src: "/images/dimeka/water-point-2.jpg",
-        alt: "Concrete public water point on a raised slab inside a new galvanised post and barbed-wire fence",
+        alt: "Concrete public water point on a raised slab inside a new steel post and barbed-wire fence",
         caption: "Public water point",
       },
     ],
     cover: {
-      src: "/images/dimeka/service-reservoir-200m3.jpg",
+      src: "/images/dimeka/service-reservoir-01.jpg",
       alt: "Circular concrete reservoir with a blue band and vertical stripe on a red-earth site under a cloudy sky",
-      caption: "service reservoir",
+      caption: "Service reservoir",
     },
   },
   {
@@ -551,7 +606,7 @@ export const projects: Project[] = [
     location: "Gorche Woreda, Sidama Region",
     client: "Sidama National Regional State Water, Mines and Energy Bureau",
     summary:
-      "Rural water supply infrastructure combining pipelines, water storage and community water points with civil and electromechanical works. Barcon Engineering participated in joint venture with Shimelis Alemu GWWC.",
+      "Rural water supply with pipelines, storage, community water points, and civil and electromechanical works. Delivered in joint venture with Shimelis Alemu GWWC.",
     delivery: "Barcon Engineering in joint venture with Shimelis Alemu GWWC",
   },
   {
@@ -562,7 +617,7 @@ export const projects: Project[] = [
     location: "Konso Zone, Ethiopia",
     client: "South Ethiopia Regional State Bureau of Agriculture",
     summary:
-      "Small-scale irrigation infrastructure combining solar-powered pumping, pressure mains and canal works. The project includes associated hydraulic and civil structures.",
+      "Small-scale irrigation infrastructure combining pressure mains and canal works. The project includes associated hydraulic and civil structures.",
     gallery: [
       {
         src: "/images/talato/canal-excavation.jpg",
@@ -594,7 +649,7 @@ export const projects: Project[] = [
     location: "Konso Zone, South Ethiopia",
     client: "South Ethiopia Regional State Water and Energy Bureau",
     summary:
-      "Water infrastructure works covering pressure pipelines, storage-related civil works and electromechanical equipment. Barcon Engineering participated in joint venture with Bigeta Business PLC.",
+      "Water works covering pressure pipelines, storage-related civil works and electromechanical equipment. Delivered in joint venture with Bigeta Business PLC.",
     delivery: "Barcon Engineering in joint venture with Bigeta Business PLC",
   },
   {
@@ -606,7 +661,7 @@ export const projects: Project[] = [
     client:
       "Central Ethiopia Regional Water, Irrigation and Mines Development Bureau",
     summary:
-      "Water supply works covering pressure and distribution pipelines, public water points and associated chambers. The project includes pipe installation and commissioning.",
+      "Water supply works covering pressure and distribution pipelines, public water points and chambers. The works include pipe installation and commissioning.",
   },
   {
     slug: "debub-qege-shifa-road",
@@ -698,6 +753,36 @@ export const qualifications = [
   },
 ];
 
+export const recognition: Recognition[] = [
+  {
+    eyebrow: "National sector engagement",
+    title: "Supporting Ethiopia’s water and energy sector",
+    text: [
+      "Barcon Engineering received a Certificate of Appreciation from the Ministry of Water and Energy for its supporting sponsorship of the 3rd Ethiopian Water and Energy Week, held on 26–30 October 2026 in Addis Ababa.",
+      "This recognition acknowledges sponsorship of the event.",
+    ],
+    image: {
+      src: "/images/recognition/ministry-water-energy-week-certificate.jpg",
+      alt: "Certificate of Appreciation from the Ministry of Water and Energy to Barcon Engineering for its supporting sponsorship of the 3rd Ethiopian Water and Energy Week",
+      caption:
+        "Certificate of Appreciation for supporting sponsorship of the 3rd Ethiopian Water and Energy Week, 26–30 October 2026, Addis Ababa",
+    },
+  },
+  {
+    eyebrow: "Community recognition",
+    title: "Recognized by the Hobicha community",
+    text: [
+      "Barcon Engineering received a Certificate of Appreciation from the Hobicha Woreda administration in Wolayita, Ethiopia, in recognition of its contribution to the implementation of a drinking water supply and sanitation project in the area.",
+    ],
+    image: {
+      src: "/images/recognition/hobicha-woreda-certificate.jpg",
+      alt: "Certificate of Appreciation in Amharic from the Hobicha Woreda Water and Energy Office, Wolaita, presented to Barcon Engineering",
+      caption:
+        "Certificate of Appreciation from the Hobicha Woreda administration in Wolayita, Ethiopia",
+    },
+  },
+];
+
 export const process = [
   {
     title: "Plan",
@@ -717,6 +802,25 @@ export const process = [
   },
 ];
 
+export const principles = [
+  {
+    title: "Quality and coordination",
+    text: "Our approach emphasizes engineering quality and coordination across civil, hydraulic and electromechanical work. Project specifications and agreed acceptance requirements guide delivery.",
+  },
+  {
+    title: "People and site safety",
+    text: "Responsible project management considers the people carrying out the work and the communities around each site. We aim to meet the safety requirements set out in each contract.",
+  },
+  {
+    title: "Environmental care",
+    text: "We aim to use resources responsibly and consider the effects of construction on water, land and nearby communities. We aim to adapt environmental measures to each site and to what the contract requires.",
+  },
+  {
+    title: "Clear communication",
+    text: "We value practical communication with clients, project partners and communities, with responsibilities and handover requirements agreed around each project.",
+  },
+];
+
 export const communityVideo = {
   eyebrow: "Social responsibility",
   title: "Serving the community",
@@ -726,3 +830,22 @@ export const communityVideo = {
   label: "Hobicha community water point video",
   caption: "Community water access at Hobicha.",
 };
+
+export const homeStats: HomeStat[] = [
+  {
+    id: "founded",
+    value: String(company.founded),
+    label: "Since",
+    labelFirst: true,
+  },
+  {
+    id: "projects",
+    value: "10",
+    label: "Projects",
+  },
+  {
+    id: "expertise",
+    value: String(services.length),
+    label: "Areas of expertise",
+  },
+];

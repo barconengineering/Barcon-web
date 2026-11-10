@@ -2,9 +2,9 @@ import { pageMetadata } from "@/lib/site";
 export const metadata = pageMetadata("/", {});
 import Image from "next/image";
 import Link from "next/link";
-import { Icon, serviceIcons } from "@/components/icons";
+import { Icon, serviceIcons, statIcons } from "@/components/icons";
 import { ProjectCTA, TextLink } from "@/components/shared";
-import { process, projects, services } from "@/lib/content";
+import { homeStats, process, projects, services } from "@/lib/content";
 
 import { BoxedInfrastructure } from "@/components/infrastructure-scene";
 
@@ -12,92 +12,63 @@ export default function Home() {
   const featured = [projects[0], projects[4], projects[6]];
   return (
     <>
-      <section
-        className="hero approved-hero"
-        aria-label="Engineering with purpose"
-      >
+      <section className="hero landing-hero" aria-labelledby="landing-title">
         <Image
-          className="hero-image"
+          className="landing-hero-image"
           src="/images/approved-water-point.png"
           alt="Illustration of an Ethiopian woman and girl collecting water from a brass tap into a yellow jerrycan, with an elevated water tank behind them"
           fill
-          sizes="(max-width: 767px) 100vw, 64vw"
+          sizes="(max-width: 767px) 100vw, 72vw"
           preload
         />
-        <div className="hero-shade" />
+        <div className="landing-hero-shade" aria-hidden="true" />
         <div className="container hero-content">
-          <p className="eyebrow">Engineering with purpose</p>
-          <h1>
+          <h1 id="landing-title">
             Engineering a<br />
             stronger Ethiopia.
           </h1>
+          <span className="landing-accent" aria-hidden="true" />
           <p className="hero-description">
-            Water supply, sanitation, energy, and civil infrastructure that
-            connect communities and create lasting opportunity.
-          </p>
-          <div className="button-row">
-            <Link href="/projects" className="button">
-              Explore our projects <Icon name="diagonal" size={20} />
-            </Link>
-            <Link href="/services" className="hero-link">
-              Our expertise <Icon name="arrow" size={20} />
-            </Link>
-          </div>
-        </div>
-      </section>
-      <div className="proof-strip">
-        <div className="container proof-inner">
-          <div>
-            <strong>2016</strong>
-            <span>Established in Ethiopia</span>
-          </div>
-          <div>
-            <strong>10</strong>
-            <span>Selected project profiles</span>
-          </div>
-          <div>
-            <strong>7</strong>
-            <span>Areas of expertise</span>
-          </div>
-          <p>
-            Local knowledge.
-            <br />
-            <span>Multidisciplinary capability.</span>
+            An Ethiopian multidisciplinary engineering and construction company
+            delivering sustainable infrastructure, with a focus on water supply
+            and sanitation for healthier, more resilient communities.
           </p>
         </div>
-      </div>
-
-      <section
-        className="home-service-strip"
-        aria-labelledby="home-services-title"
-      >
-        <div className="container">
-          <h2 id="home-services-title" className="sr-only">
-            Explore our seven areas of expertise
-          </h2>
-          <div className="home-service-cards">
+        <div className="landing-band">
+          <div className="container landing-stats">
+            {homeStats.map((stat) => (
+              <div key={stat.id}>
+                <Icon name={statIcons[stat.id]} size={40} />
+                <p>
+                  {stat.labelFirst && <span>{stat.label}</span>}
+                  <strong>{stat.value}</strong>
+                  {!stat.labelFirst && <span>{stat.label}</span>}
+                </p>
+              </div>
+            ))}
+          </div>
+          <h2 className="sr-only">Our areas of expertise</h2>
+          <ul className="landing-services">
             {services.map((service, index) => (
-              <Link
-                href={`/services/${service.slug}`}
-                key={service.slug}
-                className="home-service-card"
-              >
-                <div className="home-service-photo">
+              <li key={service.slug}>
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="landing-service"
+                >
                   <Image
                     src={service.image.src}
                     alt={service.image.alt}
                     fill
-                    sizes="(max-width: 600px) 48vw, (max-width: 1100px) 24vw, 14vw"
+                    sizes="(max-width: 767px) 160px, (max-width: 1100px) 200px, 15vw"
                   />
-                </div>
-                <div className="home-service-label">
-                  <Icon name={serviceIcons[index]} size={23} />
-                  <h3>{service.title}</h3>
-                  <Icon name="diagonal" size={16} />
-                </div>
-              </Link>
+                  <span className="landing-service-label">
+                    <Icon name={serviceIcons[index]} size={26} />
+                    {service.title}
+                  </span>
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
@@ -248,7 +219,7 @@ export default function Home() {
             </p>
             <div className="responsibility-points">
               <span>
-                <Icon name="verified" /> Quality assurance
+                <Icon name="verified" /> Engineering quality
               </span>
               <span>
                 <Icon name="shield" /> People & site safety

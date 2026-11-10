@@ -6,7 +6,7 @@ import "./globals.css";
 import "./motion.css";
 import "./feedback.css";
 import { HomeMotion } from "@/components/home-motion";
-import { siteOrigin, allowIndexing } from "@/lib/site";
+import { siteOrigin, allowIndexing, openGraphDefaults } from "@/lib/site";
 import { Analytics } from "@vercel/analytics/next";
 
 const satoshi = localFont({
@@ -35,14 +35,7 @@ export const metadata: Metadata = {
   },
   description:
     "Ethiopian engineering and construction expertise in water supply, sanitation, irrigation, roads, buildings, electromechanical systems, and solar energy. Established in 2016.",
-  openGraph: {
-    type: "website",
-    siteName: "Barcon Engineering",
-    locale: "en_ET",
-    title: "Barcon Engineering",
-    description:
-      "Engineering with purpose. Building for communities across Ethiopia.",
-  },
+  openGraph: openGraphDefaults,
 };
 export default function RootLayout({
   children,

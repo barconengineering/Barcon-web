@@ -25,7 +25,6 @@ export async function POST(request: Request) {
       .startsWith("application/json")
   )
     return reply({ ok: false, error: "Invalid request format." }, 415);
-  // Enforce the limit while reading, including requests without Content-Length.
   const reader = request.body?.getReader();
   if (!reader) return reply({ ok: false, error: "Invalid request." }, 400);
   const decoder = new TextDecoder();

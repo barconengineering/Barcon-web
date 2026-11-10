@@ -23,7 +23,6 @@ export function HomeMotion({ children }: { children: React.ReactNode }) {
     }), { threshold: .12 });
     targets.forEach((target, i) => {
       target.style.setProperty('--reveal-delay', `${(i % 3) * 70}ms`);
-      // Content already visible at hydration is never hidden.
       if (target.getBoundingClientRect().top > innerHeight) target.classList.add('motion-reveal');
       reveal.observe(target);
     });

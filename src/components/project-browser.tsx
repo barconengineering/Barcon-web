@@ -9,12 +9,15 @@ const filters = [
   "Solar",
   "Roads",
 ] as const;
+const statuses = ["All statuses", "Ongoing", "Completed"] as const;
 export function ProjectBrowser() {
   const [filter, setFilter] = useState<string>("All projects");
+  const [status, setStatus] = useState<string>("All statuses");
   const [search, setSearch] = useState("");
   const visible = projects.filter(
     (p) =>
       (filter === "All projects" || p.category === filter) &&
+      (status === "All statuses" || p.status === status) &&
       `${p.title} ${p.client ?? ""} ${p.location ?? ""}`
         .toLowerCase()
         .includes(search.toLowerCase().trim()),
@@ -22,22 +25,41 @@ export function ProjectBrowser() {
   return (
     <>
       <div className="project-toolbar">
-        <div
-          className="filter-group"
-          role="group"
-          aria-label="Filter projects by category"
-        >
-          {filters.map((f) => (
-            <button
-              key={f}
-              type="button"
-              onClick={() => setFilter(f)}
-              className={filter === f ? "active" : ""}
-              aria-pressed={filter === f}
-            >
-              {f}
-            </button>
-          ))}
+        <div className="project-filters">
+          <div
+            className="filter-group"
+            role="group"
+            aria-label="Filter projects by category"
+          >
+            {filters.map((f) => (
+              <button
+                key={f}
+                type="button"
+                onClick={() => setFilter(f)}
+                className={filter === f ? "active" : ""}
+                aria-pressed={filter === f}
+              >
+                {f}
+              </button>
+            ))}
+          </div>
+          <div
+            className="filter-group"
+            role="group"
+            aria-label="Filter projects by status"
+          >
+            {statuses.map((s) => (
+              <button
+                key={s}
+                type="button"
+                onClick={() => setStatus(s)}
+                className={status === s ? "active" : ""}
+                aria-pressed={status === s}
+              >
+                {s}
+              </button>
+            ))}
+          </div>
         </div>
         <label className="project-search">
           <span className="sr-only">Search projects or locations</span>
@@ -66,6 +88,7 @@ export function ProjectBrowser() {
             type="button"
             onClick={() => {
               setFilter("All projects");
+              setStatus("All statuses");
               setSearch("");
             }}
           >

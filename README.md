@@ -37,7 +37,7 @@ The old `/services/roads-bridges` and `/services/import-export` URLs permanently
 
 ## Design preservation
 
-The client feedback changes content and imagery; it does not request a white theme or removal of animation. The navy palette (including system dark mode), scroll reveals and animated infrastructure diagram are retained. The latest user-approved layout uses a translucent blurred header, a background-free horizontal presentation of the original logo, a wider hero view and seven clickable service cards immediately below the hero statistics. Remaining sections preserve the earlier flow. The approved water-point illustration replaces the old hero visual. Service thumbnails, capability groups and portfolio filters implement the specific feedback.
+The client feedback changes content and imagery; it does not request a white theme or removal of animation. The navy palette (including system dark mode), scroll reveals and animated infrastructure diagram are retained. The latest user-approved layout uses a translucent blurred header, the official stacked logo (colour in the header, white in the footer), a wider hero view and seven clickable service cards immediately below the hero statistics. Remaining sections preserve the earlier flow. The approved water-point illustration replaces the old hero visual. Service thumbnails, capability groups and portfolio filters implement the specific feedback.
 
 ## Enquiries
 
@@ -57,6 +57,6 @@ The source hero video remains available in the repository, but the homepage now 
 
 ## Client feedback and rollback
 
-Implemented from the 9 November 2026 feedback on branch `codex/client-feedback-2026-11-09`, based on `908218be9c96e31da5d7bb0e6d77e95701d7361e`. See `LAUNCH-CHECKLIST.md` for materials to supply after this update and verification still required. No missing project photographs or facts are fabricated. The 19+ total is withheld pending confirmation.
+Implemented from the 9 November 2026 feedback on branch `codex/client-feedback-2026-11-09`, based on `908218be9c96e31da5d7bb0e6d77e95701d7361e`. See `LAUNCH-CHECKLIST.md` for materials to supply after this update and verification still required. No missing project photographs or facts are fabricated.
 
 Keep changes on the feature branch for review. Before merge, switch back to unchanged `main` to recover the baseline. After merge, use a revert commit or hosting deployment rollback rather than rewriting shared history.

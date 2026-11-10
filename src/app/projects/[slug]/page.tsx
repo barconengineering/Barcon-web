@@ -1,8 +1,10 @@
 import { pageMetadata } from "@/lib/site";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "@/lib/content";
-import { PhotoGallery } from "@/components/photo-gallery";
+import { BentoGallery } from "@/components/bento-gallery";
+import { Breadcrumb } from "@/components/breadcrumb";
+import { ProjectNavigation } from "@/components/project-navigation";
+import { projectBreadcrumbs } from "@/lib/project-navigation";
 import { PageIntro, ProjectCTA, TextLink } from "@/components/shared";
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -32,6 +34,7 @@ export default async function ProjectPage({
       <PageIntro
         label={`${project.category} / ${project.status}`}
         title={project.title}
+        breadcrumb={<Breadcrumb items={projectBreadcrumbs(project)} />}
       >
         {project.summary}
       </PageIntro>
@@ -80,19 +83,10 @@ export default async function ProjectPage({
           )}
         </dl>
       </section>
-      {project.gallery && (
-        <PhotoGallery
-          images={project.gallery}
-          label={`${project.title} photographs`}
-          title="From the project site"
-          grid
-        />
+      {project.gallery && project.gallery.length > 0 && (
+        <BentoGallery photos={project.gallery} title={project.title} />
       )}
-      <div className="container project-back">
-        <Link className="text-link" href="/contact">
-          Discuss a similar project →
-        </Link>
-      </div>
+      <ProjectNavigation project={project} />
       <ProjectCTA />
     </>
   );
