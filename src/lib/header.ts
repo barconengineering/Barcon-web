@@ -6,11 +6,17 @@ export const headerLinks = [
   ["Our Expertise", "/services"],
   ["Projects", "/projects"],
   ["Our Approach", "/approach"],
-  ["Contact", "/contact"],
+  ["Contact Us", "/contact"],
 ] as const;
+
+const ctaHref = "/contact";
 
 export function isCurrentPath(pathname: string, href: string) {
   return href === "/" ? pathname === "/" : pathname.startsWith(href);
+}
+
+export function isHeaderCta(href: string) {
+  return href === ctaHref;
 }
 
 export function headerState(pathname: string, atTop: boolean, open: boolean) {

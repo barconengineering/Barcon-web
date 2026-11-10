@@ -4,7 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useAtTop } from "@/hooks/use-at-top";
 import { useMenu } from "@/hooks/use-menu";
-import { headerLinks, headerState, isCurrentPath } from "@/lib/header";
+import {
+  headerLinks,
+  headerState,
+  isCurrentPath,
+  isHeaderCta,
+} from "@/lib/header";
 import { Brand } from "./brand";
 import { Icon } from "./icons";
 
@@ -32,16 +37,23 @@ export function Header() {
           aria-label="Main navigation"
           className={`main-nav ${open ? "is-open" : ""}`}
         >
-          {headerLinks.map(([label, href]) => (
-            <Link
-              key={href}
-              href={href}
-              onClick={close}
-              aria-current={isCurrentPath(pathname, href) ? "page" : undefined}
-            >
-              {label}
-            </Link>
-          ))}
+          {headerLinks.map(([label, href]) => {
+            const cta = isHeaderCta(href);
+            return (
+              <Link
+                key={href}
+                href={href}
+                className={cta ? "button nav-cta" : undefined}
+                onClick={close}
+                aria-current={
+                  isCurrentPath(pathname, href) ? "page" : undefined
+                }
+              >
+                {label}
+                {cta && <Icon name="diagonal" size={18} />}
+              </Link>
+            );
+          })}
         </nav>
       </div>
     </header>

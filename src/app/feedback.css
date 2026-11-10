@@ -73,6 +73,26 @@ body {
   outline: 2px solid currentColor;
   outline-offset: 4px;
 }
+.site-header .main-nav > a.nav-cta,
+.site-header .main-nav > a.nav-cta:hover {
+  min-height: 0;
+  margin-left: 6px;
+  padding: 9px 16px;
+  gap: 10px;
+  color: var(--porcelain);
+  font-size: 14px;
+  font-weight: 700;
+}
+.site-header .main-nav > a.nav-cta::after {
+  display: none;
+}
+.site-header .main-nav > a.nav-cta:focus-visible {
+  outline: 2px solid var(--porcelain);
+  outline-offset: 2px;
+}
+.header-light .main-nav > a.nav-cta:focus-visible {
+  outline-color: var(--navy);
+}
 @media (max-width: 1100px) {
   .main-nav {
     gap: 20px;
@@ -95,6 +115,11 @@ body {
     right: auto;
     bottom: 8px;
     width: 32px;
+  }
+  .site-header .main-nav.is-open > a.nav-cta {
+    margin: 16px 0 0;
+    padding: 14px 23px;
+    font-size: 16px;
   }
 }
 @media (max-width: 767px) {

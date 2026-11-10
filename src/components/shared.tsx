@@ -19,7 +19,7 @@ export function ProjectCTA() {
 export function Footer() {
   return <footer className="site-footer"><div className="container">
     <div className="footer-main"><div className="footer-brand"><Brand variant="horizontal-white" /><p>Engineering with purpose.<br />Building for communities across Ethiopia.</p></div>
-      <div><h3>Explore</h3><Link href="/about">About Barcon</Link><Link href="/services">Our expertise</Link><Link href="/projects">Project experience</Link><Link href="/approach">Our approach</Link><Link href="/contact">Contact</Link></div>
+      <div><h3>Explore</h3><Link href="/about">About Barcon</Link><Link href="/services">Our expertise</Link><Link href="/projects">Project experience</Link><Link href="/approach">Our approach</Link><Link href="/contact">Contact Us</Link></div>
       <div className="footer-contact"><h3>Get in touch</h3><a href={`mailto:${company.email}`}>{company.email}</a><a href={`tel:${company.phoneHref}`}>{company.phone}</a><p>{company.address}<br />{company.locality}<br />{company.city}</p></div>
     </div>
     <div className="footer-bottom"><span>© 2026 Barcon Engineering. All rights reserved.</span><Link href="/privacy">Privacy</Link></div>
