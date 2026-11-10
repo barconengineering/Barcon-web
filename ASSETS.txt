@@ -22,9 +22,9 @@ without quantities: trench, service reservoir, two valve chambers and water poin
 Electromechanical work uses pumps, generator and dosing equipment. Supply imagery
 shows actual HDPE storage at Dimeka, not a claim of inventory or GC installation.
 DCI and GC product photographs remain a requested input; inaccurate old pipe art
-is not used. The solar pumping station project uses one drone photograph as its
-cover (public/images/solar/pumping-station-aerial-01.jpg), resized to 1920px JPEG
-from the supplied folder
+is not used. The solar pumping station project uses five drone photographs in
+public/images/solar/ (pumping-station-aerial-01.jpg as the cover), resized to
+1920px JPEG from the supplied folder
 "Solar Project Photos" (10 November 2026). Which of the three stations
 (Beneya, Garbota, Birbiskela) they show is not stated, so captions stay generic.
 Confirm photograph provenance/public-use permission at final company sign-off.

@@ -550,6 +550,33 @@ export const projects: Project[] = [
     summary:
       "Solarization of three rural pumping stations at Beneya, Garbota and Birbiskela. Delivered in joint venture with Ehun Business PLC.",
     delivery: "Barcon Engineering in joint venture with Ehun Business PLC",
+    gallery: [
+      {
+        src: "/images/solar/pumping-station-aerial-01.jpg",
+        alt: "Aerial view of a fenced solar array beside a pump house, with community members gathered outside the fence among banana plants",
+        caption: "Solar array and pump house",
+      },
+      {
+        src: "/images/solar/pumping-station-aerial-02.jpg",
+        alt: "Overhead view of two rows of solar panels inside a mesh fence next to a block pump house, surrounded by enset and banana gardens",
+        caption: "Fenced solar pumping station",
+      },
+      {
+        src: "/images/solar/solar-array-overhead.jpg",
+        alt: "Top-down drone view of two long rows of photovoltaic panels on steel supports inside a fenced compound",
+        caption: "Photovoltaic array",
+      },
+      {
+        src: "/images/solar/solar-array-landscape.jpg",
+        alt: "Solar array and pump house in a fenced compound with forested hills behind and visitors standing by the gate",
+        caption: "Completed solar installation",
+      },
+      {
+        src: "/images/solar/handover-team.jpg",
+        alt: "Group of stakeholders standing in front of a block pump house beside rows of solar panels",
+        caption: "Site visit at the pump house",
+      },
+    ],
     cover: {
       src: "/images/solar/pumping-station-aerial-01.jpg",
       alt: "Aerial view of a fenced solar array beside a pump house, with community members gathered outside the fence among banana plants",
