@@ -46,7 +46,7 @@ export function ProjectScroller({
                 src={project.cover.src}
                 alt={project.cover.alt}
                 fill
-                preload={i === 0}
+                loading="lazy"
                 sizes="100vw"
                 style={{ objectPosition: project.cover.position }}
               />

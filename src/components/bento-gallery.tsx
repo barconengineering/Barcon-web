@@ -51,7 +51,7 @@ export function BentoGallery({
               src={item.src}
               alt={item.alt}
               fill
-              preload={i === 0}
+              loading="lazy"
               sizes={
                 i === 0
                   ? "(max-width: 767px) 100vw, 66vw"
