@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { company } from "@/lib/content";
+import { company, ctaPhoto } from "@/lib/content";
 import { Brand } from "./brand";
 import { Icon } from "./icons";
 
@@ -14,7 +14,7 @@ export function Illustration({ name, alt, className = "", overlay }: { name: str
   return <figure className={`illustration ${className}`}><div className="image-frame"><Image src={name.startsWith("/") ? name : `/images/${name}.png`} fill sizes="(max-width: 767px) 100vw, 55vw" alt={alt} loading="lazy" />{overlay}</div></figure>;
 }
 export function ProjectCTA() {
-  return <section className="contact-band"><div className="container contact-band-inner"><div><p className="eyebrow">Build with Barcon</p><h2>Let’s move your<br />project forward.</h2></div><div><p>Bring us your requirements. We’ll bring the engineering, experience, and commitment to help deliver them.</p><Link href="/contact" className="button">Discuss a project <Icon name="diagonal" size={20} /></Link></div></div></section>;
+  return <section className="contact-band"><div className="contact-band-media"><Image src={ctaPhoto.src} alt="" fill loading="lazy" sizes="100vw" style={{ objectPosition: ctaPhoto.position }} /><div className="contact-band-shade" aria-hidden="true" /></div><div className="container contact-band-inner"><div className="contact-band-copy"><span className="contact-band-accent" aria-hidden="true" /><p className="eyebrow">Build with Barcon</p><h2>Let’s move your project forward.</h2><p>Bring us your requirements. We’ll bring the engineering, experience, and commitment to help deliver them.</p><div className="button-row"><Link href="/contact" className="button">Discuss a project <Icon name="diagonal" size={20} /></Link><a className="contact-band-phone" href={`tel:${company.phoneHref}`}><Icon name="phone" size={20} />{company.phone}</a></div></div></div></section>;
 }
 export function Footer() {
   return <footer className="site-footer"><div className="container">

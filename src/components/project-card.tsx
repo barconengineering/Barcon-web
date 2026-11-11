@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/lib/content";
+import { projectCover } from "@/lib/project-navigation";
 import { Icon } from "./icons";
 export function ProjectCard({
   project,
@@ -10,7 +11,7 @@ export function ProjectCard({
   heading?: "h2" | "h3";
 }) {
   const Heading = heading;
-  const cover = project.cover ?? project.gallery?.[0];
+  const cover = projectCover(project);
   return (
     <Link
       href={`/projects/${project.slug}`}

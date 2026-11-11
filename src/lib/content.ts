@@ -350,11 +350,6 @@ export const projects: Project[] = [
         caption: "Pipeline trench excavation",
       },
       {
-        src: "/images/hobicha/trench-excavation-1.jpg",
-        alt: "View along a deep, narrow pipeline trench with steep red-soil walls",
-        caption: "Trench excavation for the pipeline network",
-      },
-      {
         src: "/images/hobicha/sandwich-reservoir-construction.jpg",
         alt: "Circular stone-masonry reservoir under construction on a hillside, with a wooden ladder and workers at its base",
         caption: "Masonry reservoir under construction",
@@ -363,11 +358,6 @@ export const projects: Project[] = [
         src: "/images/hobicha/sandwich-reservoir-01.jpg",
         alt: "Completed circular stone-masonry reservoir with a blue-painted roof edge among eucalyptus trees",
         caption: "Booster reservoir",
-      },
-      {
-        src: "/images/hobicha/service-reservoir-01.jpg",
-        alt: "Large circular concrete reservoir with a blue band and steel access ladder on a gravelled site",
-        caption: "Storage reservoir",
       },
       {
         src: "/images/hobicha/service-reservoir-02.jpg",
@@ -393,11 +383,6 @@ export const projects: Project[] = [
         src: "/images/hobicha/water-point-construction.jpg",
         alt: "Newly built concrete water point with three taps on a slab, inside a timber and barbed-wire fence",
         caption: "Public water point under construction",
-      },
-      {
-        src: "/images/hobicha/water-point.jpg",
-        alt: "Completed concrete water point with three taps on a stone-masonry platform beneath trees",
-        caption: "Public water point",
       },
       {
         src: "/images/hobicha/water-point-community.jpg",
@@ -433,11 +418,6 @@ export const projects: Project[] = [
         caption: "Pipeline trench excavation",
       },
       {
-        src: "/images/kelle/pipe-laying.jpg",
-        alt: "Truck-mounted crane lowering black pipe beside an open trench in savannah with mountains behind",
-        caption: "Pipe laying",
-      },
-      {
         src: "/images/kelle/service-reservoir-01.jpg",
         alt: "Rendered concrete reservoir with blue trim and a rooftop room, surrounded by timber scaffolding",
         caption: "Service reservoir under construction",
@@ -456,11 +436,6 @@ export const projects: Project[] = [
         src: "/images/kelle/surface-pump.jpg",
         alt: "Two green surface centrifugal pumps with blue valves and pipework in a concrete pump pit",
         caption: "Surface pump installation",
-      },
-      {
-        src: "/images/kelle/generator-house-construction.jpg",
-        alt: "Concrete-block generator house with louvred openings beyond a new chain-link fence",
-        caption: "Generator house construction",
       },
       {
         src: "/images/kelle/generator-construction.jpg",
@@ -503,11 +478,6 @@ export const projects: Project[] = [
       "Barcon Engineering completed Phase II of the Ade-Dawe water supply scheme. Further project details will be added once confirmed by the client.",
     gallery: [
       {
-        src: "/images/ade-dawe/trench-excavation.jpg",
-        alt: "Narrow pipeline trench dug through red soil across a grassy field lined with eucalyptus trees",
-        caption: "Pipeline trench excavation",
-      },
-      {
         src: "/images/ade-dawe/service-reservoir.jpg",
         alt: "Circular rendered concrete reservoir with a timber ladder inside a new post-and-wire fence, beside a white plastic tank",
         caption: "Service reservoir",
@@ -516,11 +486,6 @@ export const projects: Project[] = [
         src: "/images/ade-dawe/valve-chamber-01.jpg",
         alt: "Rendered masonry valve chamber with a white steel access cover set into excavated red soil",
         caption: "Masonry valve chamber",
-      },
-      {
-        src: "/images/ade-dawe/valve-chamber-02.jpg",
-        alt: "Low concrete valve chamber with a hinged white steel cover on cleared ground with stones behind",
-        caption: "Valve chamber with access cover",
       },
       {
         src: "/images/ade-dawe/water-point.jpg",
@@ -599,11 +564,6 @@ export const projects: Project[] = [
         caption: "Service reservoir",
       },
       {
-        src: "/images/dimeka/service-reservoir-02.jpg",
-        alt: "Rendered concrete reservoir with a light-blue band on a circular apron, with trees and a worker in the background",
-        caption: "Service reservoir",
-      },
-      {
         src: "/images/dimeka/pipe-shade.jpg",
         alt: "Long steel-framed pipe storage shed with a corrugated roof sheltering coils of black HDPE pipe",
         caption: "Pipe storage shed",
@@ -612,11 +572,6 @@ export const projects: Project[] = [
         src: "/images/dimeka/water-point-1.jpg",
         alt: "Concrete public water point on a slab with a steel door and fence posts being installed",
         caption: "Public water point and fencing",
-      },
-      {
-        src: "/images/dimeka/water-point-2.jpg",
-        alt: "Concrete public water point on a raised slab inside a new steel post and barbed-wire fence",
-        caption: "Public water point",
       },
     ],
     cover: {
@@ -635,6 +590,23 @@ export const projects: Project[] = [
     summary:
       "Rural water supply with pipelines, storage, community water points, and civil and electromechanical works. Delivered in joint venture with Shimelis Alemu GWWC.",
     delivery: "Barcon Engineering in joint venture with Shimelis Alemu GWWC",
+    gallery: [
+      {
+        src: "/images/soka-sonicha/service-reservoir.jpg",
+        alt: "Large circular concrete reservoir with a blue band and steel access ladder on a gravelled site",
+        caption: "Storage reservoir",
+      },
+      {
+        src: "/images/soka-sonicha/trench-excavation.jpg",
+        alt: "View along a deep, narrow pipeline trench with steep red-soil walls",
+        caption: "Pipeline trench excavation",
+      },
+      {
+        src: "/images/soka-sonicha/water-point.jpg",
+        alt: "Concrete public water point on a raised slab inside a new steel post and barbed-wire fence",
+        caption: "Public water point",
+      },
+    ],
   },
   {
     slug: "talato-solar-irrigation",
@@ -678,6 +650,23 @@ export const projects: Project[] = [
     summary:
       "Water works covering pressure pipelines, storage-related civil works and electromechanical equipment. Delivered in joint venture with Bigeta Business PLC.",
     delivery: "Barcon Engineering in joint venture with Bigeta Business PLC",
+    gallery: [
+      {
+        src: "/images/karat/service-reservoir.jpg",
+        alt: "Rendered concrete reservoir with a light-blue band on a circular apron, with trees in the background",
+        caption: "Service reservoir",
+      },
+      {
+        src: "/images/karat/pipe-laying.jpg",
+        alt: "Truck-mounted crane lowering black pipe beside an open trench in savannah with mountains behind",
+        caption: "Pipe laying",
+      },
+      {
+        src: "/images/karat/generator-house.jpg",
+        alt: "Concrete-block generator house with louvred openings beyond a new chain-link fence",
+        caption: "Generator house construction",
+      },
+    ],
   },
   {
     slug: "dongoro-bonkoya-wash",
@@ -689,6 +678,23 @@ export const projects: Project[] = [
       "Central Ethiopia Regional Water, Irrigation and Mines Development Bureau",
     summary:
       "Water supply works covering pressure and distribution pipelines, public water points and chambers. The works include pipe installation and commissioning.",
+    gallery: [
+      {
+        src: "/images/dongoro-bonkoya/trench-excavation.jpg",
+        alt: "Narrow pipeline trench dug through red soil across a grassy field lined with eucalyptus trees",
+        caption: "Pipeline trench excavation",
+      },
+      {
+        src: "/images/dongoro-bonkoya/valve-chamber.jpg",
+        alt: "Low concrete valve chamber with a hinged steel cover on cleared ground with stones behind",
+        caption: "Valve chamber",
+      },
+      {
+        src: "/images/dongoro-bonkoya/water-point.jpg",
+        alt: "Completed concrete water point with three taps on a platform inside a timber-post and barbed-wire fence",
+        caption: "Public water point",
+      },
+    ],
   },
   {
     slug: "debub-qege-shifa-road",
@@ -726,6 +732,7 @@ export const projects: Project[] = [
       src: "/images/debub-qege-shifa/gravel-compaction.jpg",
       alt: "Freshly laid gravel road surface with a roller compacting further ahead between fenced homesteads",
       caption: "Gravel surface compaction",
+      position: "50% 6%",
     },
   },
 ];
@@ -829,6 +836,27 @@ export const process = [
   },
 ];
 
+export const responsibilityPoints = [
+  {
+    focus: "quality",
+    icon: "verified",
+    title: "Engineering quality",
+    text: "Built to specification, tested and commissioned before handover.",
+  },
+  {
+    focus: "safety",
+    icon: "shield",
+    title: "People & site safety",
+    text: "We aim to meet the safety requirements set out in each contract.",
+  },
+  {
+    focus: "environment",
+    icon: "leaf",
+    title: "Environmental care",
+    text: "We aim to adapt environmental measures to each site and to what the contract requires.",
+  },
+] as const;
+
 export const principles = [
   {
     title: "Quality and coordination",
@@ -856,6 +884,19 @@ export const communityVideo = {
   poster: "/videos/hobicha-community-poster.jpg",
   label: "Hobicha community water point video",
   caption: "Community water access at Hobicha.",
+};
+
+export const homeFeaturedProjects = [
+  "hobicha-water-supply",
+  "solar-pumping-stations",
+  "debub-qege-shifa-road",
+];
+
+export const ctaPhoto: SitePhoto = {
+  src: "/images/hobicha/service-reservoir-02.jpg",
+  alt: "",
+  caption: "Hobicha storage reservoir compound",
+  position: "68% 62%",
 };
 
 export const homeStats: HomeStat[] = [

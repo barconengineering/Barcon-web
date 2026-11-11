@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { projects } from "@/lib/content";
+import { Icon } from "./icons";
 import { ProjectCard } from "./project-card";
 const filters = [
   "All projects",
@@ -27,7 +28,7 @@ export function ProjectBrowser() {
       <div className="project-toolbar">
         <div className="project-filters">
           <div
-            className="filter-group"
+            className="filter-group filter-category"
             role="group"
             aria-label="Filter projects by category"
           >
@@ -44,7 +45,7 @@ export function ProjectBrowser() {
             ))}
           </div>
           <div
-            className="filter-group"
+            className="filter-group filter-status"
             role="group"
             aria-label="Filter projects by status"
           >
@@ -53,9 +54,10 @@ export function ProjectBrowser() {
                 key={s}
                 type="button"
                 onClick={() => setStatus(s)}
-                className={status === s ? "active" : ""}
+                className={`filter-${s.split(" ").pop()?.toLowerCase()}${status === s ? " active" : ""}`}
                 aria-pressed={status === s}
               >
+                <span className="filter-dot" aria-hidden="true" />
                 {s}
               </button>
             ))}
@@ -63,6 +65,7 @@ export function ProjectBrowser() {
         </div>
         <label className="project-search">
           <span className="sr-only">Search projects or locations</span>
+          <Icon name="search" size={18} />
           <input
             type="search"
             placeholder="Search projects or locations"

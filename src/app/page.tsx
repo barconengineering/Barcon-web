@@ -4,12 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { Icon, serviceIcons, statIcons } from "@/components/icons";
 import { ProjectCTA, TextLink } from "@/components/shared";
-import { homeStats, process, projects, services } from "@/lib/content";
+import { homeStats, process, services } from "@/lib/content";
+import { featuredProjects } from "@/lib/project-navigation";
+import { ProjectScroller } from "@/components/project-scroller";
 
-import { BoxedInfrastructure } from "@/components/infrastructure-scene";
+import { ResponsibleSection } from "@/components/responsible-section";
+import { ServiceExplorer } from "@/components/service-explorer";
 
 export default function Home() {
-  const featured = [projects[0], projects[4], projects[6]];
   return (
     <>
       <section className="hero landing-hero" aria-labelledby="landing-title">
@@ -109,92 +111,27 @@ export default function Home() {
               disciplines work together.
             </p>
           </div>
-          <div className="expertise-layout">
-            <Link
-              href="/services/water-supply-sanitation"
-              className="featured-service"
-            >
-              <div className="featured-service-image">
-                <Image
-                  src={services[0].image.src}
-                  alt={services[0].image.alt}
-                  loading="lazy"
-                  fill
-                  sizes="(max-width: 767px) 100vw, 40vw"
-                />
-              </div>
-              <div className="featured-service-copy">
-                <Icon name="water" size={32} />
-                <h3>
-                  Water supply
-                  <br />& sanitation
-                </h3>
-                <p>
-                  The foundation of our business. Complete systems that bring
-                  reliable water access to communities.
-                </p>
-                <span className="text-link">
-                  Explore water solutions <Icon name="arrow" size={20} />
-                </span>
-              </div>
-            </Link>
-            <div className="service-links">
-              {services.slice(1).map((service) => (
-                <Link key={service.slug} href={`/services/${service.slug}`}>
-                  <span className="service-link-photo">
-                    <Image
-                      src={service.image.src}
-                      alt={service.image.alt}
-                      fill
-                      sizes="80px"
-                    />
-                  </span>
-                  <div>
-                    <h3>{service.shortTitle}</h3>
-                    <p>{service.summary}</p>
-                  </div>
-                  <Icon name="diagonal" size={21} />
-                </Link>
-              ))}
-            </div>
-          </div>
+          <ServiceExplorer />
         </div>
       </section>
 
-      <section className="section container">
-        <div className="section-heading">
-          <p className="eyebrow">Selected experience</p>
-          <h2>
-            Engineering that
-            <br />
-            reaches further.
-          </h2>
-          <p>
-            A closer look at the systems, places, and project scopes behind our
-            work.
-          </p>
+      <section className="section home-projects">
+        <div className="container">
+          <div className="section-heading">
+            <p className="eyebrow">Selected experience</p>
+            <h2>
+              Engineering that
+              <br />
+              reaches further.
+            </h2>
+            <p>
+              A closer look at the systems, places, and project scopes behind
+              our work.
+            </p>
+          </div>
         </div>
-        <div className="selected-projects">
-          {featured.map((project, index) => (
-            <Link
-              href={`/projects/${project.slug}`}
-              key={project.slug}
-              className={`selected-project selected-project-${index}`}
-            >
-              <div className="selected-top">
-                <span className="category">{project.category}</span>
-                <Icon name="diagonal" size={24} />
-              </div>
-              <h3>{project.title}</h3>
-              <p>{project.location}</p>
-              <div className="selected-metric">
-                <strong>{project.status}</strong>
-                <span>{project.summary}</span>
-              </div>
-            </Link>
-          ))}
-        </div>
-        <div className="section-end">
+        <ProjectScroller projects={featuredProjects()} />
+        <div className="container section-end">
           <TextLink href="/projects">Explore all project experience</TextLink>
           <span>
             Delivered for government institutions and development partners.
@@ -202,36 +139,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section section-tinted">
-        <div className="container responsible-layout">
-          <BoxedInfrastructure />
-          <div className="responsible-copy">
-            <Icon name="leaf" size={36} />
-            <h2>
-              Responsible by design.
-              <br />
-              Accountable in delivery.
-            </h2>
-            <p>
-              Quality, safety, and community wellbeing guide our approach.
-              Careful planning starts with the people who will depend on each
-              project.
-            </p>
-            <div className="responsibility-points">
-              <span>
-                <Icon name="verified" /> Engineering quality
-              </span>
-              <span>
-                <Icon name="shield" /> People & site safety
-              </span>
-              <span>
-                <Icon name="leaf" /> Environmental care
-              </span>
-            </div>
-            <TextLink href="/approach">Our approach to delivery</TextLink>
-          </div>
-        </div>
-      </section>
+      <ResponsibleSection />
 
       <section className="section container">
         <div className="section-heading compact">

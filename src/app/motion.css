@@ -26,14 +26,48 @@
 }
 
 
-.original-infrastructure{background:#0d2532;border:0;display:flex;align-items:center;--progress:1;--canal-opacity:1;--reservoir-opacity:1;--pump-opacity:1;--solar-opacity:1;--canal-rise:0px;--reservoir-rise:0px;--pump-rise:0px;--solar-rise:0px;--pipes-rise:0px;--pipes-opacity:1;--water-opacity:1}
+.original-infrastructure{background:#0d2532;border:0;display:flex;align-items:center}
 .original-infrastructure .infrastructure-drawing{width:100%;height:auto;display:block;overflow:visible}
-.original-infrastructure .build-part{transform-box:fill-box;transform-origin:center;will-change:transform,opacity;transition:transform .65s cubic-bezier(.22,.65,.25,1),opacity .45s ease}
-.original-infrastructure .build-canal{opacity:var(--canal-opacity);transform:translateY(var(--canal-rise))}
-.original-infrastructure .build-reservoir{opacity:var(--reservoir-opacity);transform:translateY(var(--reservoir-rise))}
-.original-infrastructure .build-pump{opacity:var(--pump-opacity);transform:translateY(var(--pump-rise))}
-.original-infrastructure .build-solar{opacity:var(--solar-opacity);transform:translateY(var(--solar-rise))}
-.original-infrastructure .build-pipes{opacity:var(--pipes-opacity);transform:translateY(var(--pipes-rise))}
-.original-infrastructure .drawing-build .water-route{opacity:var(--water-opacity);stroke-dashoffset:var(--flow-offset,0);transition:opacity .4s ease,stroke-dashoffset .65s ease}
-@media(max-width:767px){.original-infrastructure .build-part{will-change:auto;transition-duration:.35s,.25s}}
-@media(prefers-reduced-motion:reduce){.original-infrastructure .build-part{transform:none!important;opacity:1!important;will-change:auto;transition:none!important}.original-infrastructure .drawing-build .water-route{opacity:1;stroke-dashoffset:0;transition:none!important}}
+.responsible-scene{transform:perspective(1400px) rotateX(var(--tilt-y,0deg)) rotateY(var(--tilt-x,0deg));transition:transform .6s cubic-bezier(.2,.65,.25,1)}
+.responsible .original-infrastructure{transition:opacity .8s ease,transform .9s cubic-bezier(.2,.65,.25,1)}
+.responsible[data-reveal=out] .original-infrastructure{opacity:0;transform:translateY(32px)}
+.original-infrastructure .drawing-label{--d:.7s}
+.original-infrastructure .drawing-label:nth-child(2){--d:1s}
+.original-infrastructure .drawing-label:nth-child(3){--d:1.3s}
+.original-infrastructure .drawing-label:nth-child(4){--d:1.6s}
+.original-infrastructure .drawing-label path{stroke-dasharray:1;stroke-dashoffset:0;transition:stroke-dashoffset .7s ease var(--d),stroke .4s ease}
+.original-infrastructure .drawing-label text{fill-opacity:.72;transition:opacity .5s ease calc(var(--d) + .35s),fill .4s ease,fill-opacity .4s ease}
+.responsible[data-reveal=out] .drawing-label path{stroke-dashoffset:1}
+.responsible[data-reveal=out] .drawing-label text{opacity:0}
+.original-infrastructure .site-ground,.original-infrastructure .scene-part{transition:opacity .4s ease,filter .4s ease}
+.original-infrastructure[data-active] .site-ground{filter:brightness(.82)}
+.original-infrastructure[data-active] .scene-part{opacity:.55}
+.original-infrastructure[data-active=quality] [data-for=quality],.original-infrastructure[data-active=safety] [data-for=safety],.original-infrastructure[data-active=environment] [data-for=environment]{opacity:1;filter:drop-shadow(0 0 7px rgb(208 113 44 / .75)) brightness(1.12)}
+.original-infrastructure[data-active=quality] .drawing-label[data-for=quality] path,.original-infrastructure[data-active=safety] .drawing-label[data-for=safety] path,.original-infrastructure[data-active=environment] .drawing-label[data-for=environment] path{stroke:var(--copper)}
+.original-infrastructure[data-active=quality] .drawing-label[data-for=quality] text,.original-infrastructure[data-active=safety] .drawing-label[data-for=safety] text,.original-infrastructure[data-active=environment] .drawing-label[data-for=environment] text{fill:var(--sand);fill-opacity:1}
+.original-infrastructure .water-route path{animation:scene-flow 2.6s linear infinite}
+.original-infrastructure .scene-ripple,.original-infrastructure .scene-pulse{opacity:0;transform-box:fill-box;transform-origin:center}
+.original-infrastructure .scene-ripple{animation:scene-ripple 5s ease-out infinite}
+.original-infrastructure .scene-ripple+.scene-ripple{animation-delay:2.5s}
+.original-infrastructure .scene-shimmer{animation:scene-shimmer 8s ease-in-out 1s infinite}
+.original-infrastructure .scene-pulse{animation:scene-pulse 3s ease-out infinite}
+.original-infrastructure:not([data-playing]) *{animation-play-state:paused}
+@keyframes scene-flow{to{stroke-dashoffset:-30}}
+@keyframes scene-ripple{0%{opacity:0;transform:scale(.3)}20%{opacity:.6}100%{opacity:0;transform:scale(1)}}
+@keyframes scene-shimmer{0%{transform:translateX(0)}45%,100%{transform:translateX(420px)}}
+@keyframes scene-pulse{0%{opacity:.85;transform:scale(1)}100%{opacity:0;transform:scale(3.2)}}
+.responsible-copy>*,.responsibility-point{transition:opacity .6s ease var(--d,0s),transform .6s cubic-bezier(.2,.65,.25,1) var(--d,0s)}
+.responsible-copy>:nth-child(2){--d:.08s}
+.responsible-copy>:nth-child(3){--d:.16s}
+.responsibility-point:nth-child(1){--d:.26s}
+.responsibility-point:nth-child(2){--d:.34s}
+.responsibility-point:nth-child(3){--d:.42s}
+.responsible-copy>:nth-child(5){--d:.52s}
+.responsible[data-reveal=out] .responsible-copy>:not(.responsibility-points),.responsible[data-reveal=out] .responsibility-point{opacity:0;transform:translateY(18px)}
+.responsible[data-reveal=out] .responsible-copy>:focus-within,.responsible[data-reveal=out] .responsibility-point:focus-within{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+.responsible-scene{transform:none}
+.responsible[data-reveal=out] .original-infrastructure,.responsible[data-reveal=out] .responsible-copy>:not(.responsibility-points),.responsible[data-reveal=out] .responsibility-point{opacity:1;transform:none}
+.responsible[data-reveal=out] .drawing-label path{stroke-dashoffset:0}
+.responsible[data-reveal=out] .drawing-label text{opacity:1}
+}
