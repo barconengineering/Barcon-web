@@ -4,6 +4,10 @@ export type SitePhoto = {
   caption: string;
   position?: string;
 };
+export type HeroVideo = {
+  sources: { src: string; type: string }[];
+  poster: string;
+};
 export type Service = {
   slug: string;
   title: string;
@@ -15,6 +19,7 @@ export type Service = {
   note?: string;
   featuredProject?: string;
   qualification?: number;
+  heroVideo?: HeroVideo;
 };
 export type Project = {
   slug: string;
@@ -45,8 +50,8 @@ export const company = {
   name: "Barcon Engineering",
   founded: 2016,
   email: "info@barconengineering.com",
-  phone: "+251 901 223 150",
-  phoneHref: "+251901223150",
+  phone: "+251 96 256 1867",
+  phoneHref: "+251962561867",
   address: "Imperial Plaza Building, Office 201",
   locality: "Woreda 02, Lemi Kura Sub-City",
   city: "Addis Ababa, Ethiopia",
@@ -256,6 +261,13 @@ export const services: Service[] = [
     shortTitle: "Solar energy",
     summary:
       "Harnessing solar energy for reliable water supply and irrigation.",
+    heroVideo: {
+      sources: [
+        { src: "/videos/solar/solar-site.mp4", type: "video/mp4" },
+        { src: "/videos/solar/solar-site.webm", type: "video/webm" },
+      ],
+      poster: "/videos/solar/solar-site-poster.jpg",
+    },
     description:
       "Barcon has installed solar systems in water supply and irrigation contexts, integrating photovoltaic power with pumps and infrastructure. Our experience connects renewable power with practical water infrastructure.",
     groups: [
@@ -772,20 +784,30 @@ export const values = [
 export const qualifications = [
   {
     title: "Water Works General Contractor — Grade 1",
+    shortTitle: "Grade 1 Water Works",
     issuer: "Ethiopian Construction Authority",
     document: "/documents/water-works-competency.pdf",
   },
   {
     title: "General Contractor — Grade 5",
+    shortTitle: "Grade 5 General",
     issuer: "Ethiopian Construction Authority",
     document: "/documents/general-contractor-competency.pdf",
   },
   {
     title: "Electromechanical Contractor — Grade 5",
+    shortTitle: "Grade 5 Electromechanical",
     issuer: "Petroleum and Energy Authority",
     document: "/documents/electromechanical-competency.pdf",
   },
 ];
+
+export const servicesPage = {
+  eyebrow: "Our expertise",
+  title: "Connected expertise. Complete solutions.",
+  intro: "Engineering, construction and supply capabilities that connect water, energy and communities.",
+  licenceLabel: "Licensed contractor",
+};
 
 export const recognition: Recognition[] = [
   {

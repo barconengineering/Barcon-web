@@ -1,11 +1,11 @@
 import {
   ArrowRight, ArrowUpRight, Buildings, CalendarBlank, CaretLeft, CaretRight, Check, CheckCircle, Drop, EnvelopeSimple, Gear,
-  GlobeHemisphereEast, Leaf, Lightning, List, MagnifyingGlass, MapPin, Phone, Plant, RoadHorizon,
+  GlobeHemisphereEast, Leaf, Lightning, List, MagnifyingGlass, MapPin, Pause, Phone, Plant, Play, RoadHorizon,
   ShieldCheck, Stack, Sun, Truck, X,
 } from "@phosphor-icons/react/dist/ssr";
 import type { HomeStat } from "@/lib/content";
 
-const icons = { arrow: ArrowRight, diagonal: ArrowUpRight, building: Buildings, calendar: CalendarBlank, check: Check, previous: CaretLeft, next: CaretRight, verified: CheckCircle, water: Drop, email: EnvelopeSimple, gear: Gear, globe: GlobeHemisphereEast, leaf: Leaf, power: Lightning, menu: List, search: MagnifyingGlass, pin: MapPin, phone: Phone, irrigation: Plant, road: RoadHorizon, shield: ShieldCheck, layers: Stack, solar: Sun, truck: Truck, close: X };
+const icons = { arrow: ArrowRight, diagonal: ArrowUpRight, building: Buildings, calendar: CalendarBlank, check: Check, previous: CaretLeft, next: CaretRight, verified: CheckCircle, water: Drop, email: EnvelopeSimple, gear: Gear, globe: GlobeHemisphereEast, leaf: Leaf, power: Lightning, menu: List, search: MagnifyingGlass, pin: MapPin, pause: Pause, phone: Phone, play: Play, irrigation: Plant, road: RoadHorizon, shield: ShieldCheck, layers: Stack, solar: Sun, truck: Truck, close: X };
 export type IconName = keyof typeof icons;
 export function Icon({ name, size = 22, className = "" }: { name: IconName; size?: number; className?: string }) {
   const Component = icons[name];

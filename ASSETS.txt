@@ -29,6 +29,14 @@ public/images/solar/ (pumping-station-aerial-01.jpg as the cover), resized to
 (Beneya, Garbota, Birbiskela) they show is not stated, so captions stay generic.
 Confirm photograph provenance/public-use permission at final company sign-off.
 
+SOLAR SERVICE HERO VIDEO
+public/videos/solar/solar-site.mp4 (H.264), solar-site.webm (VP9) and
+solar-site-poster.jpg: 15-second, 1280x720 drone footage of a fenced solar PV
+array and pump house, formerly public/hero.mp4, hero.webm and hero-poster.jpg
+(added in commit 7c8923c, never deleted, moved 13 November 2026). Used muted and
+decorative as the /services/solar-energy hero background. The poster alone is shown
+on mobile and with reduced motion. Which station it shows is not stated.
+
 SUPERSEDED ASSETS
 The earlier separate asphalt-road image and generic pipe/trading illustration from
 the supplied ZIP are not used. Existing water-infrastructure.png and solar-irrigation.png

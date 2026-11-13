@@ -7,6 +7,7 @@ import { serviceEquipment } from "@/lib/service-equipment";
 import { Icon, serviceIcons } from "@/components/icons";
 import { PhotoGallery } from "@/components/photo-gallery";
 import { PageIntro, ProjectCTA, TextLink } from "@/components/shared";
+import { VideoHero } from "@/components/video-hero";
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
 }
@@ -38,9 +39,15 @@ export default async function ServicePage({
   const equipment = serviceEquipment(slug);
   return (
     <>
-      <PageIntro label="Our expertise" title={service.title}>
-        {service.summary}
-      </PageIntro>
+      {service.heroVideo ? (
+        <VideoHero label="Our expertise" title={service.title} media={service.heroVideo}>
+          {service.summary}
+        </VideoHero>
+      ) : (
+        <PageIntro label="Our expertise" title={service.title}>
+          {service.summary}
+        </PageIntro>
+      )}
       <section className="section container service-introduction">
         <div>
           <Icon name={serviceIcons[services.indexOf(service)]} size={40} />

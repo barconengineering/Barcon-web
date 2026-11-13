@@ -40,7 +40,7 @@ Checked on 11 November 2026 against the code and the rendered site (24 routes at
 - Privacy copy reflects Resend and Vercel Analytics; analytics runs only on Vercel hosting.
 - Private builds remain noindex by default.
 - The community video has no narration, so no captions are needed. Confirmed 10 November 2026.
-- Confirmed by management on 10 November 2026: all ten project statuses, the homepage “10 Projects” count, phone `+251 901 223 150` and the Imperial Plaza Building, Office 201, Woreda 02, Lemi Kura Sub-City, Addis Ababa address. The Hobicha client and Talato scope are also confirmed.
+- Confirmed by management on 10 November 2026: all ten project statuses, the homepage “10 Projects” count, phone `+251 96 256 1867` and the Imperial Plaza Building, Office 201, Woreda 02, Lemi Kura Sub-City, Addis Ababa address. The Hobicha client and Talato scope are also confirmed.
 
 ## Decisions awaiting Barcon approval
 

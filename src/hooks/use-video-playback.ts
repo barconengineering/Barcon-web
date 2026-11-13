@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 
 export function useVideoPlayback() {
   const video = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(true);
   const toggleSound = () => {
     const el = video.current;
@@ -10,5 +11,5 @@ export function useVideoPlayback() {
     setMuted(el.muted);
     if (el.paused) void el.play().catch(() => {});
   };
-  return { video, muted, toggleSound };
+  return { video, playing, muted, toggleSound, onPlay: () => setPlaying(true), onPause: () => setPlaying(false) };
 }
