@@ -47,9 +47,9 @@ a,button { touch-action: manipulation; }
 .button-secondary:hover { background: var(--surface-alt); }
 .button-row { display: flex; flex-wrap: wrap; align-items: center; gap: 28px; }
 .text-link { display: inline-flex; gap: 18px; align-items: center; color: var(--link); font: 700 14px/1.5 var(--font-satoshi), sans-serif; padding-block: 8px; }
-.text-link svg,.hero-link svg,.directory-service>svg:last-child { transition: transform .2s; }
+.text-link svg,.hero-link svg { transition: transform .2s; }
 .text-link:hover svg,.hero-link:hover svg { transform: translateX(4px); }
-a:hover .project-card-link svg,.directory-service:hover>svg:last-child { transform: translate(3px,-3px); }
+a:hover .project-card-link svg { transform: translate(3px,-3px); }
 .skip-link { position: fixed; z-index: 40; top: 12px; left: 12px; background: var(--porcelain); color: var(--navy); padding: 10px 16px; transform: translateY(-180%); }
 .skip-link:focus { transform: translateY(0); }
 .site-header { position: sticky; top: 0; z-index: 20; }
@@ -145,12 +145,6 @@ button[aria-pressed="true"] + .responsibility-detail p { padding-block: 6px 8px;
 .leader-photo img { object-fit: cover; object-position: center 20%; }
 .leader-role { color: var(--link); margin-block: 12px 24px; }
 .leadership-layout p+p { margin-top: 20px; }
-.services-directory { display: grid; grid-template-columns: 1fr 1fr; gap: 0 70px; }
-.directory-service { display: grid; grid-template-columns: 45px 1fr 24px; align-items: start; gap: 24px; padding-block: 38px; border-bottom: 1px solid var(--border); }
-.directory-service>svg:first-child { color: var(--link); }
-.directory-service h2 { font-size: 25px; margin-bottom: 15px; }
-.directory-service p { font-size: 17px; }
-.directory-service:last-child { border-bottom: 0; }
 .detail-layout { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 100px; }
 .detail-layout .lead { margin-top: 30px; font-size: 21px; }
 .outcome { border-left: 2px solid var(--sand); padding-left: 24px; margin-top: 38px; }
@@ -264,10 +258,6 @@ button[aria-pressed="true"] + .responsibility-detail p { padding-block: 6px 8px;
  .process-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
  .mission-grid { gap: 45px; }
  .mission-grid article+article { padding-left: 35px; }
- .services-directory { gap: 0 40px; }
- .directory-service { grid-template-columns: 32px 1fr; gap: 16px; }
- .directory-service>svg:last-child { display: none; }
- .directory-service h2 { font-size: 23px; }
  .leadership-layout { grid-template-columns: 280px 1fr; gap: 50px; }
  .commitment-grid { gap: 50px; }
  .contact-layout { grid-template-columns: 1fr; }
@@ -335,12 +325,6 @@ button[aria-pressed="true"] + .responsibility-detail p { padding-block: 6px 8px;
  .values-grid h3 { font-size: 21px; margin-bottom: 10px; }
  .leadership-layout { grid-template-columns: 1fr; gap: 30px; }
  .leader-photo { width: 100%; max-width: 340px; }
- .services-directory { grid-template-columns: 1fr; }
- .directory-service { grid-template-columns: 38px 1fr 20px; padding-block: 29px; }
- .directory-service:first-child { padding-top: 0; }
- .directory-service>svg:last-child { display: block; width: 20px; }
- .directory-service h2 { font-size: 23px; }
- .directory-service p { font-size: 16px; }
  .capability-panel { padding: 28px 24px; }
  .capability-panel h2 { font-size: 26px; }
  .capability-panel li { font-size: 16px; }
@@ -391,13 +375,6 @@ button[aria-pressed="true"] + .responsibility-detail p { padding-block: 6px 8px;
 .site-photo figcaption { margin-top: 10px; font-size: 13px; color: var(--muted); }
 @media (max-width: 767px) { .site-photo-gallery { grid-template-columns: 1fr; gap: 24px; } }
 
-.directory-service-with-photo { grid-template-columns: 220px 45px 1fr 24px; align-items: center; }
-.directory-photo { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; background: var(--surface-alt); }
-.directory-photo img { object-fit: cover; }
-@media (max-width: 767px) {
-  .directory-service-with-photo { grid-template-columns: 38px 1fr 20px; }
-  .directory-photo { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
-}
 
 .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -3; }
 .hero-video-toggle { position: absolute; right: 24px; bottom: 24px; z-index: 2; border: 1px solid rgb(255 255 255 / .5); background: var(--navy); color: var(--porcelain); padding: 10px 16px; cursor: pointer; font: inherit; font-size: 13px; }

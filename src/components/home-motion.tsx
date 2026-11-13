@@ -12,7 +12,7 @@ export function HomeMotion({ children }: { children: React.ReactNode }) {
     const mobile = matchMedia('(max-width: 767px)');
     const hero = node.querySelector<HTMLElement>('.hero');
     const process = node.querySelector<HTMLElement>('.process-grid');
-    const targets = Array.from(node.querySelectorAll<HTMLElement>('.proof-inner>div,.proof-inner>p,.home-about>div,.section-heading,.service-preview,.service-links>a,.section-end,.process-grid article,.contact-band-inner>div,.footer-main>div,.editorial-copy,.mission-grid>article,.values-grid>article,.leadership-layout>div,.commitment-grid>article,.directory-service,.project-card,.detail-layout>div,.contact-details,.enquiry-panel,.prose'));
+    const targets = Array.from(node.querySelectorAll<HTMLElement>('.proof-inner>div,.proof-inner>p,.home-about>div,.section-heading,.service-preview,.service-links>a,.section-end,.process-grid article,.contact-band-inner>div,.footer-main>div,.editorial-copy,.mission-grid>article,.values-grid>article,.leadership-layout>div,.commitment-grid>article,.project-card,.detail-layout>div,.contact-details,.enquiry-panel,.prose'));
     let frame = 0;
     const clamp = (n: number) => Math.min(1, Math.max(0, n));
     const reveal = new IntersectionObserver(entries => entries.forEach(entry => {
